@@ -1,0 +1,30 @@
+name: Generate Design Tokens
+on:
+  push:
+    paths:
+      - 'tokens.json' # Se déclenche quand ce fichier est modifié
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build tokens
+        run: npm run build # Lance ta commande magique !
+
+      - name: Commit and Push CSS
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add build/css/variables.css
+          git commit -m "style: update variables.css from tokens [skip ci]" || echo "No changes to commit"
+          git push
