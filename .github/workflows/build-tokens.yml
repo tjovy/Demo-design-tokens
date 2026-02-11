@@ -1,0 +1,46 @@
+name: 🚀 Build Design Tokens
+
+# DÉCLENCHEUR : Quand se lance le robot ?
+on:
+  push:
+    branches:
+      - main
+    # Sécurité : Ne se lance que si les fichiers sources (JSON) changent
+    # Cela évite les boucles infinies si on modifie juste le README
+    paths:
+      - 'tokens/**/*.json'
+      - 'config.json'
+      - 'package.json'
+
+# PERMISSIONS : Le robot a le droit d'écrire dans le dépôt
+permissions:
+  contents: write
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Récupérer le code
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Installer Node.js
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Installer les dépendances (Style Dictionary)
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      # 4. Lancer la construction (Génération du CSS)
+      - name: 🔨 Build Tokens
+        run: npm run build
+
+      # 5. Commit automatique du résultat
+      - name: 💾 Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(tokens): 🤖 Auto-generate CSS from Figma [skip ci]"
+          file_pattern: 'build/**' # On ne commit que le dossier build
