@@ -7,8 +7,9 @@ on:
       - main
     # Sécurité : Ne se lance que si les fichiers sources (JSON) changent
     # Cela évite les boucles infinies si on modifie juste le README
+    # APRÈS (La version qui marche à tous les coups)
     paths:
-      - 'tokens/**/*.json'
+      - '**.json'       # Surveille TOUS les fichiers JSON (partout)
       - 'config.json'
       - 'package.json'
 
