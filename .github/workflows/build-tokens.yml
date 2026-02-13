@@ -1,47 +1,35 @@
-name: 🚀 Build Design Tokens
+name: 🏭 Build Tokens (JSON -> CSS)
 
-# DÉCLENCHEUR : Quand se lance le robot ?
 on:
   push:
-    branches:
-      - main
-    # Sécurité : Ne se lance que si les fichiers sources (JSON) changent
-    # Cela évite les boucles infinies si on modifie juste le README
-    # APRÈS (La version qui marche à tous les coups)
-    paths:
-      - '**.json'       # Surveille TOUS les fichiers JSON (partout)
-      - 'config.json'
-      - 'package.json'
+    branches: [main]
+    paths: ['tokens.json'] # Ne se déclenche QUE si le design change
 
-# PERMISSIONS : Le robot a le droit d'écrire dans le dépôt
 permissions:
   contents: write
 
 jobs:
-  build-and-commit:
+  build-css:
     runs-on: ubuntu-latest
     steps:
-      # 1. Récupérer le code
-      - name: 📥 Checkout code
+      - name: 📥 Récupérer le code
         uses: actions/checkout@v4
 
-      # 2. Installer Node.js
-      - name: 🟢 Setup Node.js
+      - name: 🟢 Installer Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. Installer les dépendances (Style Dictionary)
-      - name: 📦 Install dependencies
-        run: npm ci
+      - name: 📦 Installer Style Dictionary
+        run: npm install style-dictionary token-transformer
 
-      # 4. Lancer la construction (Génération du CSS)
-      - name: 🔨 Build Tokens
-        run: npm run build
-
-      # 5. Commit automatique du résultat
-      - name: 💾 Commit generated files
+      - name: 🔨 Transformer & Générer le CSS
+        run: |
+          npx token-transformer tokens.json tokens-fixed.json
+          npx style-dictionary build --config config.json
+          
+      - name: 💾 Commit du CSS généré
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(tokens): 🤖 Auto-generate CSS from Figma [skip ci]"
-          file_pattern: 'build/**' # On ne commit que le dossier build
+          commit_message: "chore(design-tokens): 🤖 Génération automatique du CSS"
+          file_pattern: 'dist/*.css' # On ne commit que le résultat final
