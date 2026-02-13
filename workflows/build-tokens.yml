@@ -1,30 +1,35 @@
-name: Generate Design Tokens
+name: 🏭 Build Tokens (JSON -> CSS)
+
 on:
   push:
-    paths:
-      - 'tokens.json' # Se déclenche quand ce fichier est modifié
+    branches: [main]
+    paths: ['tokens.json'] # Ne se déclenche QUE si le design change
+
+permissions:
+  contents: write
+
 jobs:
-  build:
+  build-css:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: 📥 Récupérer le code
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: 🟢 Installer Node
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+      - name: 📦 Installer Style Dictionary
+        run: npm install style-dictionary token-transformer
 
-      - name: Build tokens
-        run: npm run build # Lance ta commande magique !
-
-      - name: Commit and Push CSS
+      - name: 🔨 Transformer & Générer le CSS
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add build/css/variables.css
-          git commit -m "style: update variables.css from tokens [skip ci]" || echo "No changes to commit"
-          git push
+          npx token-transformer tokens.json tokens-fixed.json
+          npx style-dictionary build --config config.json
+          
+      - name: 💾 Commit du CSS généré
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(design-tokens): 🤖 Génération automatique du CSS"
+          file_pattern: 'dist/*.css' # On ne commit que le résultat final
