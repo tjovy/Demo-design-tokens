@@ -1,9 +1,8 @@
 {
   "name": "@mon-entreprise/design-tokens",
   "version": "1.0.0",
-  "description": "Source of truth for Design Tokens",
   "scripts": {
-    "build": "token-transformer tokens.json tokens-fixed.json && style-dictionary build --config config.json"
+    "build": "token-transformer tokens.json tokens-fixed.json && node scripts/sanitize.js && style-dictionary build --config config.json"
   },
   "devDependencies": {
     "style-dictionary": "^3.0.0",
