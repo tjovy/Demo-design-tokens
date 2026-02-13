@@ -3,9 +3,9 @@
   "platforms": {
     "css": {
       "transformGroup": "css",
-      "buildPath": "stories/",
+      "buildPath": "build/css/",
       "files": [{
-        "destination": "ds-styles.css",
+        "destination": "variables.css",
         "format": "css/variables"
       }]
     }
