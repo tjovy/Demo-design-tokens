@@ -1,35 +1,38 @@
-name: 🏭 Build Tokens (JSON -> CSS)
+name: 🔨 Build Design Tokens
 
 on:
   push:
-    branches: [main]
-    paths: ['tokens.json'] # Ne se déclenche QUE si le design change
-
-permissions:
-  contents: write
+    branches:
+      - main
+    paths:
+      - 'tokens.json' # Le robot ne se réveille que si ce fichier précis est modifié
 
 jobs:
-  build-css:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Donne au robot le droit de pousser du code
+
     steps:
-      - name: 📥 Récupérer le code
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🟢 Installer Node
+      - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: 📦 Installer Style Dictionary
-        run: npm install style-dictionary token-transformer
+      - name: 📦 Install dependencies
+        run: npm install
 
-      - name: 🔨 Transformer & Générer le CSS
+      - name: 🏭 Build tokens (Transform & Style Dictionary)
+        run: npm run build
+
+      - name: 💾 Commit & Push du nouveau CSS
         run: |
-          npx token-transformer tokens.json tokens-fixed.json
-          npx style-dictionary build --config config.json
-          
-      - name: 💾 Commit du CSS généré
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(design-tokens): 🤖 Génération automatique de build/css/variables.css"
-          file_pattern: 'build/css/variables.css tokens-fixed.json'
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add build/css/variables.css
+          # S'il y a des changements, on commit, sinon on continue sans erreur
+          git commit -m "🤖 auto: regénération du variables.css depuis tokens.json" || echo "Aucun changement détecté dans le CSS."
+          git push
