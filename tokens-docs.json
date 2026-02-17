@@ -1,15 +1,809 @@
 {
   "core": {
     "color": {
-      "white": {
-        "description": "## ceci est un test\n\n## Description développeur\nCouleur blanche pure (#FFFFFF) servant de fond neutre, texte inversé et élément de séparation visuelle.\n\n## Cas d'usage principal\nFond de conteneurs primaires, espaces de respiration, contraste maximal pour texte sombre, séparation entre zones de contenu.\n\n## Do & Don't\n✅ **Do**\n- Utiliser comme fond principal pour améliorer la lisibilité du texte sombre\n- Appliquer pour créer du contraste et de la hiérarchie visuelle\n- Combiner avec des ombres légères pour délimiter les zones\n\n❌ **Don't**\n- Ne pas l'utiliser pour du texte sur fond blanc (absence de contraste)\n- Ne pas appliquer sur écrans à fort contraste sans vérifier l'accessibilité\n- Ne pas mélanger avec des filtres réduisant la luminosité sans tester le WCAG AA"
+      "white": {},
+      "black": {},
+      "transparent": {},
+      "neutral": {
+        "0": {},
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {},
+        "950": {}
       },
-      "black": {
-        "description": "## Description développeur\nNoir absolu utilisé pour les textes critiques, les contours et les éléments de haute contrast.\n\n## Cas d'usage principal\nTextes principaux, contours de composants, icônes sombres et éléments nécessitant un contraste maximal sur fond clair. Essentiel pour la lisibilité et l'accessibilité WCAG AA/AAA.\n\n## Do & Don't\n✅ **Do**\n- Utiliser sur des fonds blancs ou très clairs pour garantir un ratio de contraste ≥ 4.5:1\n- Appliquer pour les corps de texte, titres et éléments interactifs critiques\n- Combiner avec des espacements généreux pour améliorer la lisibilité\n\n❌ **Don't**\n- Ne pas utiliser sur des fonds sombres ou gris moyen (risque d'insuffisance de contraste)\n- Ne pas appliquer à des textes de très petite taille sans contraste renforcé\n- Ne pas utiliser pour des éléments désactivés (utiliser une teinte grise adaptée)"
+      "primary": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {},
+        "950": {}
       },
-      "transparent": {
-        "description": "## Description développeur\nCouleur transparente utilisée pour masquer ou désactiver visuellement des éléments sans les supprimer du DOM.\n\n## Cas d'usage principal\nAppliquer une transparence complète sur des composants, overlays, arrière-plans ou états désactivés nécessitant une absence visuelle tout en préservant l'accessibilité et l'interactivité.\n\n## Do & Don't\n\n✅ **Do**\n- Utiliser pour les états désactivés nécessitant une distinction visuelle légère\n- Combiner avec d'autres propriétés CSS (opacité, visibilité) pour optimiser l'accessibilité\n- Documenter les alternatives de contraste pour les utilisateurs en situation de handicap visuel\n\n❌ **Don't**\n- Ne pas l'utiliser pour masquer du contenu important sans alternative texte ou ARIA\n- Ne pas remplacer `display: none` ou `visibility: hidden` si l'élément ne doit pas être interactif\n- Ne pas ignorer les implications WCAG lors du masquage visuel d'informations critiques"
+      "success": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {}
+      },
+      "warning": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {}
+      },
+      "danger": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {}
+      }
+    },
+    "spacing": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {},
+      "6": {},
+      "8": {},
+      "10": {},
+      "12": {},
+      "16": {},
+      "20": {},
+      "24": {}
+    },
+    "radius": {
+      "0": {},
+      "4": {},
+      "8": {},
+      "12": {},
+      "16": {},
+      "24": {},
+      "999": {}
+    },
+    "borderWidth": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "4": {}
+    },
+    "opacity": {
+      "0": {},
+      "5": {},
+      "10": {},
+      "20": {},
+      "25": {},
+      "30": {},
+      "40": {},
+      "50": {},
+      "60": {},
+      "70": {},
+      "75": {},
+      "80": {},
+      "90": {},
+      "95": {},
+      "100": {}
+    },
+    "fontFamily": {
+      "sans": {},
+      "mono": {}
+    },
+    "fontSize": {
+      "xs": {},
+      "sm": {},
+      "md": {},
+      "lg": {},
+      "xl": {},
+      "2xl": {},
+      "3xl": {},
+      "4xl": {},
+      "5xl": {}
+    },
+    "fontWeight": {
+      "regular": {},
+      "medium": {},
+      "semibold": {},
+      "bold": {}
+    },
+    "lineHeight": {
+      "none": {},
+      "tight": {},
+      "snug": {},
+      "normal": {},
+      "relaxed": {},
+      "loose": {}
+    },
+    "letterSpacing": {
+      "tighter": {},
+      "tight": {},
+      "normal": {},
+      "wide": {},
+      "wider": {},
+      "widest": {}
+    },
+    "shadow": {
+      "0": {},
+      "100": {},
+      "200": {},
+      "300": {},
+      "400": {}
+    }
+  },
+  "semantic": {
+    "color": {
+      "bg": {
+        "primary": {
+          "description": "Background principal"
+        },
+        "secondary": {
+          "description": "Background secondaire"
+        },
+        "tertiary": {
+          "description": "Background tertiaire"
+        },
+        "inverse": {
+          "description": "Background inversé"
+        },
+        "disabled": {
+          "description": "Background désactivé"
+        }
+      },
+      "text": {
+        "primary": {
+          "description": "Texte principal"
+        },
+        "secondary": {
+          "description": "Texte secondaire"
+        },
+        "tertiary": {
+          "description": "Texte tertiaire / placeholder"
+        },
+        "inverse": {
+          "description": "Texte sur fond sombre"
+        },
+        "disabled": {
+          "description": "Texte désactivé"
+        },
+        "link": {
+          "description": "Liens"
+        },
+        "linkHover": {
+          "description": "Liens au survol"
+        }
+      },
+      "border": {
+        "default": {
+          "description": "Bordure par défaut"
+        },
+        "strong": {
+          "description": "Bordure accentuée"
+        },
+        "focus": {
+          "description": "Bordure focus"
+        },
+        "disabled": {
+          "description": "Bordure désactivée"
+        }
+      },
+      "action": {
+        "primary": {
+          "bg": {
+            "default": {
+              "description": "Bouton primary - fond"
+            },
+            "hover": {
+              "description": "Bouton primary - fond hover"
+            },
+            "active": {
+              "description": "Bouton primary - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton primary - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton primary - texte"
+            },
+            "disabled": {
+              "description": "Bouton primary - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton primary - bordure"
+            },
+            "hover": {
+              "description": "Bouton primary - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton primary - bordure désactivée"
+            }
+          }
+        },
+        "secondary": {
+          "bg": {
+            "default": {
+              "description": "Bouton secondary - fond"
+            },
+            "hover": {
+              "description": "Bouton secondary - fond hover"
+            },
+            "active": {
+              "description": "Bouton secondary - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton secondary - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton secondary - texte"
+            },
+            "disabled": {
+              "description": "Bouton secondary - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton secondary - bordure"
+            },
+            "hover": {
+              "description": "Bouton secondary - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton secondary - bordure désactivée"
+            }
+          }
+        },
+        "ghost": {
+          "bg": {
+            "default": {
+              "description": "Bouton ghost - fond"
+            },
+            "hover": {
+              "description": "Bouton ghost - fond hover"
+            },
+            "active": {
+              "description": "Bouton ghost - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton ghost - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton ghost - texte"
+            },
+            "disabled": {
+              "description": "Bouton ghost - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton ghost - bordure"
+            },
+            "hover": {
+              "description": "Bouton ghost - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton ghost - bordure désactivée"
+            }
+          }
+        },
+        "danger": {
+          "bg": {
+            "default": {
+              "description": "Bouton danger - fond"
+            },
+            "hover": {
+              "description": "Bouton danger - fond hover"
+            },
+            "active": {
+              "description": "Bouton danger - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton danger - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton danger - texte"
+            },
+            "disabled": {
+              "description": "Bouton danger - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton danger - bordure"
+            },
+            "hover": {
+              "description": "Bouton danger - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton danger - bordure désactivée"
+            }
+          }
+        }
+      },
+      "feedback": {
+        "success": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        },
+        "warning": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        },
+        "error": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        },
+        "info": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        }
+      }
+    },
+    "spacing": {
+      "none": {},
+      "xs": {
+        "description": "4px - Micro espacement"
+      },
+      "sm": {
+        "description": "8px - Petit espacement"
+      },
+      "md": {
+        "description": "16px - Espacement par défaut"
+      },
+      "lg": {
+        "description": "24px - Grand espacement"
+      },
+      "xl": {
+        "description": "32px - Très grand espacement"
+      },
+      "2xl": {
+        "description": "48px - Espacement section"
+      },
+      "3xl": {
+        "description": "64px - Espacement page"
+      }
+    },
+    "radius": {
+      "none": {},
+      "sm": {
+        "description": "4px - Petit rayon"
+      },
+      "md": {
+        "description": "8px - Rayon par défaut"
+      },
+      "lg": {
+        "description": "12px - Grand rayon"
+      },
+      "full": {
+        "description": "Cercle"
+      }
+    },
+    "borderWidth": {
+      "none": {},
+      "default": {},
+      "thick": {}
+    },
+    "font": {
+      "family": {
+        "default": {
+          "description": "Police par défaut"
+        },
+        "code": {
+          "description": "Police code"
+        }
+      },
+      "size": {
+        "xs": {
+          "description": "12px"
+        },
+        "sm": {
+          "description": "14px"
+        },
+        "md": {
+          "description": "16px"
+        },
+        "lg": {
+          "description": "18px"
+        },
+        "xl": {
+          "description": "20px"
+        },
+        "2xl": {
+          "description": "24px"
+        },
+        "3xl": {
+          "description": "30px"
+        },
+        "4xl": {
+          "description": "36px"
+        }
+      },
+      "weight": {
+        "regular": {},
+        "medium": {},
+        "semibold": {},
+        "bold": {}
+      },
+      "lineHeight": {
+        "tight": {},
+        "normal": {},
+        "relaxed": {}
+      },
+      "letterSpacing": {
+        "tight": {},
+        "normal": {},
+        "wide": {}
+      }
+    },
+    "shadow": {
+      "none": {},
+      "sm": {},
+      "md": {},
+      "lg": {}
+    }
+  },
+  "component": {
+    "button": {
+      "size": {
+        "sm": {
+          "paddingX": {
+            "description": "8px"
+          },
+          "paddingY": {
+            "description": "4px"
+          },
+          "fontSize": {
+            "description": "14px"
+          },
+          "lineHeight": {},
+          "gap": {
+            "description": "4px"
+          },
+          "minHeight": {},
+          "iconSize": {}
+        },
+        "md": {
+          "paddingX": {
+            "description": "16px"
+          },
+          "paddingY": {
+            "description": "8px"
+          },
+          "fontSize": {
+            "description": "14px"
+          },
+          "lineHeight": {},
+          "gap": {
+            "description": "8px"
+          },
+          "minHeight": {},
+          "iconSize": {}
+        },
+        "lg": {
+          "paddingX": {
+            "description": "24px"
+          },
+          "paddingY": {
+            "description": "8px"
+          },
+          "fontSize": {
+            "description": "16px"
+          },
+          "lineHeight": {},
+          "gap": {
+            "description": "8px"
+          },
+          "minHeight": {},
+          "iconSize": {}
+        }
+      },
+      "radius": {},
+      "borderWidth": {},
+      "fontWeight": {},
+      "fontFamily": {},
+      "transition": {},
+      "focus": {
+        "ringWidth": {},
+        "ringOffset": {},
+        "ringColor": {}
+      }
+    },
+    "input": {
+      "size": {
+        "sm": {
+          "paddingX": {},
+          "paddingY": {},
+          "fontSize": {},
+          "minHeight": {}
+        },
+        "md": {
+          "paddingX": {},
+          "paddingY": {},
+          "fontSize": {},
+          "minHeight": {}
+        },
+        "lg": {
+          "paddingX": {},
+          "paddingY": {},
+          "fontSize": {},
+          "minHeight": {}
+        }
+      },
+      "bg": {
+        "default": {},
+        "disabled": {}
+      },
+      "text": {
+        "default": {},
+        "placeholder": {},
+        "disabled": {}
+      },
+      "border": {
+        "default": {},
+        "hover": {},
+        "focus": {},
+        "error": {},
+        "disabled": {}
+      },
+      "radius": {},
+      "borderWidth": {}
+    },
+    "card": {
+      "padding": {
+        "sm": {},
+        "md": {},
+        "lg": {}
+      },
+      "radius": {},
+      "bg": {},
+      "border": {},
+      "shadow": {}
+    },
+    "badge": {
+      "paddingX": {},
+      "paddingY": {},
+      "fontSize": {},
+      "fontWeight": {},
+      "radius": {}
+    }
+  },
+  "typography": {
+    "heading": {
+      "h1": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      },
+      "h2": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      },
+      "h3": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      },
+      "h4": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      }
+    },
+    "body": {
+      "lg": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "md": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "sm": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      }
+    },
+    "label": {
+      "lg": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "md": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "sm": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      }
+    },
+    "button": {
+      "lg": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "md": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "sm": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
       }
     }
+  },
+  "light": {
+    "fg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "bg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "accent": {
+      "default": {},
+      "onAccent": {},
+      "bg": {}
+    },
+    "shadows": {
+      "default": {}
+    }
+  },
+  "dark": {
+    "fg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "bg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "accent": {
+      "default": {},
+      "onAccent": {},
+      "bg": {}
+    },
+    "shadows": {
+      "default": {}
+    }
+  },
+  "theme": {
+    "button": {
+      "primary": {
+        "background": {},
+        "text": {}
+      },
+      "borderRadius": {},
+      "borderWidth": {
+        "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+      }
+    },
+    "card": {
+      "borderRadius": {
+        "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+      },
+      "background": {
+        "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+      },
+      "padding": {
+        "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+      }
+    },
+    "boxShadow": {
+      "default": {
+        "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+      }
+    },
+    "typography": {
+      "H1": {
+        "Bold": {
+          "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+        },
+        "Regular": {
+          "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+        }
+      },
+      "H2": {
+        "Bold": {
+          "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+        },
+        "Regular": {
+          "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+        }
+      },
+      "Body": {
+        "description": "⚠️ BUG IA : Format reçu par n8n -> [\"content\"]"
+      }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "core",
+      "semantic",
+      "component",
+      "typography",
+      "light",
+      "dark",
+      "theme"
+    ]
   }
 }
