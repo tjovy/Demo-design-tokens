@@ -1,0 +1,15 @@
+{
+  "core": {
+    "color": {
+      "white": {
+        "description": "## ceci est un test\n\n## Description développeur\nCouleur blanche pure (#FFFFFF) servant de fond neutre, texte inversé et élément de séparation visuelle.\n\n## Cas d'usage principal\nFond de conteneurs primaires, espaces de respiration, contraste maximal pour texte sombre, séparation entre zones de contenu.\n\n## Do & Don't\n✅ **Do**\n- Utiliser comme fond principal pour améliorer la lisibilité du texte sombre\n- Appliquer pour créer du contraste et de la hiérarchie visuelle\n- Combiner avec des ombres légères pour délimiter les zones\n\n❌ **Don't**\n- Ne pas l'utiliser pour du texte sur fond blanc (absence de contraste)\n- Ne pas appliquer sur écrans à fort contraste sans vérifier l'accessibilité\n- Ne pas mélanger avec des filtres réduisant la luminosité sans tester le WCAG AA"
+      },
+      "black": {
+        "description": "## Description développeur\nNoir absolu utilisé pour les textes critiques, les contours et les éléments de haute contrast.\n\n## Cas d'usage principal\nTextes principaux, contours de composants, icônes sombres et éléments nécessitant un contraste maximal sur fond clair. Essentiel pour la lisibilité et l'accessibilité WCAG AA/AAA.\n\n## Do & Don't\n✅ **Do**\n- Utiliser sur des fonds blancs ou très clairs pour garantir un ratio de contraste ≥ 4.5:1\n- Appliquer pour les corps de texte, titres et éléments interactifs critiques\n- Combiner avec des espacements généreux pour améliorer la lisibilité\n\n❌ **Don't**\n- Ne pas utiliser sur des fonds sombres ou gris moyen (risque d'insuffisance de contraste)\n- Ne pas appliquer à des textes de très petite taille sans contraste renforcé\n- Ne pas utiliser pour des éléments désactivés (utiliser une teinte grise adaptée)"
+      },
+      "transparent": {
+        "description": "## Description développeur\nCouleur transparente utilisée pour masquer ou désactiver visuellement des éléments sans les supprimer du DOM.\n\n## Cas d'usage principal\nAppliquer une transparence complète sur des composants, overlays, arrière-plans ou états désactivés nécessitant une absence visuelle tout en préservant l'accessibilité et l'interactivité.\n\n## Do & Don't\n\n✅ **Do**\n- Utiliser pour les états désactivés nécessitant une distinction visuelle légère\n- Combiner avec d'autres propriétés CSS (opacité, visibilité) pour optimiser l'accessibilité\n- Documenter les alternatives de contraste pour les utilisateurs en situation de handicap visuel\n\n❌ **Don't**\n- Ne pas l'utiliser pour masquer du contenu important sans alternative texte ou ARIA\n- Ne pas remplacer `display: none` ou `visibility: hidden` si l'élément ne doit pas être interactif\n- Ne pas ignorer les implications WCAG lors du masquage visuel d'informations critiques"
+      }
+    }
+  }
+}
