@@ -1,15 +1,809 @@
 {
   "core": {
     "color": {
-      "white": {
-        "description": "## ceci est un test\n\n## Description développeur\nCouleur blanche pure (#FFFFFF) servant de fond neutre, texte inversé et élément de séparation visuelle.\n\n## Cas d'usage principal\nFond de conteneurs primaires, espaces de respiration, contraste maximal pour texte sombre, séparation entre zones de contenu.\n\n## Do & Don't\n✅ **Do**\n- Utiliser comme fond principal pour améliorer la lisibilité du texte sombre\n- Appliquer pour créer du contraste et de la hiérarchie visuelle\n- Combiner avec des ombres légères pour délimiter les zones\n\n❌ **Don't**\n- Ne pas l'utiliser pour du texte sur fond blanc (absence de contraste)\n- Ne pas appliquer sur écrans à fort contraste sans vérifier l'accessibilité\n- Ne pas mélanger avec des filtres réduisant la luminosité sans tester le WCAG AA"
+      "white": {},
+      "black": {},
+      "transparent": {},
+      "neutral": {
+        "0": {},
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {},
+        "950": {}
       },
-      "black": {
-        "description": "## Description développeur\nNoir absolu utilisé pour les textes critiques, les contours et les éléments de haute contrast.\n\n## Cas d'usage principal\nTextes principaux, contours de composants, icônes sombres et éléments nécessitant un contraste maximal sur fond clair. Essentiel pour la lisibilité et l'accessibilité WCAG AA/AAA.\n\n## Do & Don't\n✅ **Do**\n- Utiliser sur des fonds blancs ou très clairs pour garantir un ratio de contraste ≥ 4.5:1\n- Appliquer pour les corps de texte, titres et éléments interactifs critiques\n- Combiner avec des espacements généreux pour améliorer la lisibilité\n\n❌ **Don't**\n- Ne pas utiliser sur des fonds sombres ou gris moyen (risque d'insuffisance de contraste)\n- Ne pas appliquer à des textes de très petite taille sans contraste renforcé\n- Ne pas utiliser pour des éléments désactivés (utiliser une teinte grise adaptée)"
+      "primary": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {},
+        "950": {}
       },
-      "transparent": {
-        "description": "## Description développeur\nCouleur transparente utilisée pour masquer ou désactiver visuellement des éléments sans les supprimer du DOM.\n\n## Cas d'usage principal\nAppliquer une transparence complète sur des composants, overlays, arrière-plans ou états désactivés nécessitant une absence visuelle tout en préservant l'accessibilité et l'interactivité.\n\n## Do & Don't\n\n✅ **Do**\n- Utiliser pour les états désactivés nécessitant une distinction visuelle légère\n- Combiner avec d'autres propriétés CSS (opacité, visibilité) pour optimiser l'accessibilité\n- Documenter les alternatives de contraste pour les utilisateurs en situation de handicap visuel\n\n❌ **Don't**\n- Ne pas l'utiliser pour masquer du contenu important sans alternative texte ou ARIA\n- Ne pas remplacer `display: none` ou `visibility: hidden` si l'élément ne doit pas être interactif\n- Ne pas ignorer les implications WCAG lors du masquage visuel d'informations critiques"
+      "success": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {}
+      },
+      "warning": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {}
+      },
+      "danger": {
+        "50": {},
+        "100": {},
+        "200": {},
+        "300": {},
+        "400": {},
+        "500": {},
+        "600": {},
+        "700": {},
+        "800": {},
+        "900": {}
+      }
+    },
+    "spacing": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "3": {},
+      "4": {},
+      "5": {},
+      "6": {},
+      "8": {},
+      "10": {},
+      "12": {},
+      "16": {},
+      "20": {},
+      "24": {}
+    },
+    "radius": {
+      "0": {},
+      "4": {},
+      "8": {},
+      "12": {},
+      "16": {},
+      "24": {},
+      "999": {}
+    },
+    "borderWidth": {
+      "0": {},
+      "1": {},
+      "2": {},
+      "4": {}
+    },
+    "opacity": {
+      "0": {},
+      "5": {},
+      "10": {},
+      "20": {},
+      "25": {},
+      "30": {},
+      "40": {},
+      "50": {},
+      "60": {},
+      "70": {},
+      "75": {},
+      "80": {},
+      "90": {},
+      "95": {},
+      "100": {}
+    },
+    "fontFamily": {
+      "sans": {},
+      "mono": {}
+    },
+    "fontSize": {
+      "xs": {},
+      "sm": {},
+      "md": {},
+      "lg": {},
+      "xl": {},
+      "2xl": {},
+      "3xl": {},
+      "4xl": {},
+      "5xl": {}
+    },
+    "fontWeight": {
+      "regular": {},
+      "medium": {},
+      "semibold": {},
+      "bold": {}
+    },
+    "lineHeight": {
+      "none": {},
+      "tight": {},
+      "snug": {},
+      "normal": {},
+      "relaxed": {},
+      "loose": {}
+    },
+    "letterSpacing": {
+      "tighter": {},
+      "tight": {},
+      "normal": {},
+      "wide": {},
+      "wider": {},
+      "widest": {}
+    },
+    "shadow": {
+      "0": {},
+      "100": {},
+      "200": {},
+      "300": {},
+      "400": {}
+    }
+  },
+  "semantic": {
+    "color": {
+      "bg": {
+        "primary": {
+          "description": "Couleur de Background principal"
+        },
+        "secondary": {
+          "description": "Background secondaire"
+        },
+        "tertiary": {
+          "description": "Background tertiaire"
+        },
+        "inverse": {
+          "description": "Background inversé"
+        },
+        "disabled": {
+          "description": "Background désactivé"
+        }
+      },
+      "text": {
+        "primary": {
+          "description": "Texte principal"
+        },
+        "secondary": {
+          "description": "Texte secondaire"
+        },
+        "tertiary": {
+          "description": "Texte tertiaire / placeholder"
+        },
+        "inverse": {
+          "description": "Texte sur fond sombre"
+        },
+        "disabled": {
+          "description": "Texte désactivé"
+        },
+        "link": {
+          "description": "Liens"
+        },
+        "linkHover": {
+          "description": "Liens au survol"
+        }
+      },
+      "border": {
+        "default": {
+          "description": "Bordure par défaut"
+        },
+        "strong": {
+          "description": "Bordure accentuée"
+        },
+        "focus": {
+          "description": "Bordure focus"
+        },
+        "disabled": {
+          "description": "Bordure désactivée"
+        }
+      },
+      "action": {
+        "primary": {
+          "bg": {
+            "default": {
+              "description": "Bouton primary - fond"
+            },
+            "hover": {
+              "description": "Bouton primary - fond hover"
+            },
+            "active": {
+              "description": "Bouton primary - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton primary - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton primary - texte"
+            },
+            "disabled": {
+              "description": "Bouton primary - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton primary - bordure"
+            },
+            "hover": {
+              "description": "Bouton primary - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton primary - bordure désactivée"
+            }
+          }
+        },
+        "secondary": {
+          "bg": {
+            "default": {
+              "description": "Bouton secondary - fond"
+            },
+            "hover": {
+              "description": "Bouton secondary - fond hover"
+            },
+            "active": {
+              "description": "Bouton secondary - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton secondary - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton secondary - texte"
+            },
+            "disabled": {
+              "description": "Bouton secondary - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton secondary - bordure"
+            },
+            "hover": {
+              "description": "Bouton secondary - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton secondary - bordure désactivée"
+            }
+          }
+        },
+        "ghost": {
+          "bg": {
+            "default": {
+              "description": "Bouton ghost - fond"
+            },
+            "hover": {
+              "description": "Bouton ghost - fond hover"
+            },
+            "active": {
+              "description": "Bouton ghost - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton ghost - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton ghost - texte"
+            },
+            "disabled": {
+              "description": "Bouton ghost - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton ghost - bordure"
+            },
+            "hover": {
+              "description": "Bouton ghost - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton ghost - bordure désactivée"
+            }
+          }
+        },
+        "danger": {
+          "bg": {
+            "default": {
+              "description": "Bouton danger - fond"
+            },
+            "hover": {
+              "description": "Bouton danger - fond hover"
+            },
+            "active": {
+              "description": "Bouton danger - fond actif"
+            },
+            "disabled": {
+              "description": "Bouton danger - fond désactivé"
+            }
+          },
+          "text": {
+            "default": {
+              "description": "Bouton danger - texte"
+            },
+            "disabled": {
+              "description": "Bouton danger - texte désactivé"
+            }
+          },
+          "border": {
+            "default": {
+              "description": "Bouton danger - bordure"
+            },
+            "hover": {
+              "description": "Bouton danger - bordure hover"
+            },
+            "disabled": {
+              "description": "Bouton danger - bordure désactivée"
+            }
+          }
+        }
+      },
+      "feedback": {
+        "success": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        },
+        "warning": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        },
+        "error": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        },
+        "info": {
+          "bg": {},
+          "text": {},
+          "border": {},
+          "icon": {}
+        }
+      }
+    },
+    "spacing": {
+      "none": {},
+      "xs": {
+        "description": "4px - Micro espacement"
+      },
+      "sm": {
+        "description": "8px - Petit espacement"
+      },
+      "md": {
+        "description": "16px - Espacement par défaut"
+      },
+      "lg": {
+        "description": "24px - Grand espacement"
+      },
+      "xl": {
+        "description": "32px - Très grand espacement"
+      },
+      "2xl": {
+        "description": "48px - Espacement section"
+      },
+      "3xl": {
+        "description": "64px - Espacement page"
+      }
+    },
+    "radius": {
+      "none": {},
+      "sm": {
+        "description": "4px - Petit rayon"
+      },
+      "md": {
+        "description": "8px - Rayon par défaut"
+      },
+      "lg": {
+        "description": "12px - Grand rayon"
+      },
+      "full": {
+        "description": "Cercle"
+      }
+    },
+    "borderWidth": {
+      "none": {},
+      "default": {},
+      "thick": {}
+    },
+    "font": {
+      "family": {
+        "default": {
+          "description": "Police par défaut"
+        },
+        "code": {
+          "description": "Police code"
+        }
+      },
+      "size": {
+        "xs": {
+          "description": "12px"
+        },
+        "sm": {
+          "description": "14px"
+        },
+        "md": {
+          "description": "16px"
+        },
+        "lg": {
+          "description": "18px"
+        },
+        "xl": {
+          "description": "20px"
+        },
+        "2xl": {
+          "description": "24px"
+        },
+        "3xl": {
+          "description": "30px"
+        },
+        "4xl": {
+          "description": "36px"
+        }
+      },
+      "weight": {
+        "regular": {},
+        "medium": {},
+        "semibold": {},
+        "bold": {}
+      },
+      "lineHeight": {
+        "tight": {},
+        "normal": {},
+        "relaxed": {}
+      },
+      "letterSpacing": {
+        "tight": {},
+        "normal": {},
+        "wide": {}
+      }
+    },
+    "shadow": {
+      "none": {},
+      "sm": {},
+      "md": {},
+      "lg": {}
+    }
+  },
+  "component": {
+    "button": {
+      "size": {
+        "sm": {
+          "paddingX": {
+            "description": "8px"
+          },
+          "paddingY": {
+            "description": "4px"
+          },
+          "fontSize": {
+            "description": "14px"
+          },
+          "lineHeight": {},
+          "gap": {
+            "description": "4px"
+          },
+          "minHeight": {},
+          "iconSize": {}
+        },
+        "md": {
+          "paddingX": {
+            "description": "16px"
+          },
+          "paddingY": {
+            "description": "8px"
+          },
+          "fontSize": {
+            "description": "14px"
+          },
+          "lineHeight": {},
+          "gap": {
+            "description": "8px"
+          },
+          "minHeight": {},
+          "iconSize": {}
+        },
+        "lg": {
+          "paddingX": {
+            "description": "24px"
+          },
+          "paddingY": {
+            "description": "8px"
+          },
+          "fontSize": {
+            "description": "16px"
+          },
+          "lineHeight": {},
+          "gap": {
+            "description": "8px"
+          },
+          "minHeight": {},
+          "iconSize": {}
+        }
+      },
+      "radius": {},
+      "borderWidth": {},
+      "fontWeight": {},
+      "fontFamily": {},
+      "transition": {},
+      "focus": {
+        "ringWidth": {},
+        "ringOffset": {},
+        "ringColor": {}
+      }
+    },
+    "input": {
+      "size": {
+        "sm": {
+          "paddingX": {},
+          "paddingY": {},
+          "fontSize": {},
+          "minHeight": {}
+        },
+        "md": {
+          "paddingX": {},
+          "paddingY": {},
+          "fontSize": {},
+          "minHeight": {}
+        },
+        "lg": {
+          "paddingX": {},
+          "paddingY": {},
+          "fontSize": {},
+          "minHeight": {}
+        }
+      },
+      "bg": {
+        "default": {},
+        "disabled": {}
+      },
+      "text": {
+        "default": {},
+        "placeholder": {},
+        "disabled": {}
+      },
+      "border": {
+        "default": {},
+        "hover": {},
+        "focus": {},
+        "error": {},
+        "disabled": {}
+      },
+      "radius": {},
+      "borderWidth": {}
+    },
+    "card": {
+      "padding": {
+        "sm": {},
+        "md": {},
+        "lg": {}
+      },
+      "radius": {},
+      "bg": {},
+      "border": {},
+      "shadow": {}
+    },
+    "badge": {
+      "paddingX": {},
+      "paddingY": {},
+      "fontSize": {},
+      "fontWeight": {},
+      "radius": {}
+    }
+  },
+  "typography": {
+    "heading": {
+      "h1": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      },
+      "h2": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      },
+      "h3": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      },
+      "h4": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {},
+        "letterSpacing": {}
+      }
+    },
+    "body": {
+      "lg": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "md": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "sm": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      }
+    },
+    "label": {
+      "lg": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "md": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "sm": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      }
+    },
+    "button": {
+      "lg": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "md": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
+      },
+      "sm": {
+        "fontFamily": {},
+        "fontSize": {},
+        "fontWeight": {},
+        "lineHeight": {}
       }
     }
+  },
+  "light": {
+    "fg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "bg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "accent": {
+      "default": {},
+      "onAccent": {},
+      "bg": {}
+    },
+    "shadows": {
+      "default": {}
+    }
+  },
+  "dark": {
+    "fg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "bg": {
+      "default": {},
+      "muted": {},
+      "subtle": {}
+    },
+    "accent": {
+      "default": {},
+      "onAccent": {},
+      "bg": {}
+    },
+    "shadows": {
+      "default": {}
+    }
+  },
+  "theme": {
+    "button": {
+      "primary": {
+        "background": {},
+        "text": {}
+      },
+      "borderRadius": {},
+      "borderWidth": {
+        "description": "## Description développeur\nÉpaisseur de bordure pour les composants bouton, héritant de la dimension mineure.\n\n## Cas d'usage principal\nDéfinir l'épaisseur de bordure de tous les états des boutons (par défaut, hover, active, disabled) pour assurer une cohérence visuelle et une hiérarchie claire dans l'interface utilisateur.\n\n## Do & Don't\n✅ **Do**\n- Appliquer ce token à la propriété `border-width` de tous les boutons du système\n- Maintenir cette valeur uniforme sur tous les états du bouton pour la reconnaissance visuelle\n- Combiner avec `theme.button.borderColor` pour définir des bordures complètes\n\n❌ **Don't**\n- Modifier l'épaisseur de bordure par breakpoint sans réviser le token\n- Appliquer des bordures différentes sur des variantes de bouton (primary/secondary) sans justification\n- Utiliser des valeurs en dur (px, em) au lieu du token dans les composants bouton"
+      }
+    },
+    "card": {
+      "borderRadius": {
+        "description": "## Description développeur\nRayon de bordure pour les cartes. Valeur référencée : `borderRadius.lg`. Applique un arrondi de coin cohérent aux conteneurs de type carte.\n\n## Cas d'usage principal\nArrondir les coins des composants `<Card>`, `<CardPanel>`, ou tout conteneur présenté comme une carte (liste, grille, modalité). Assure une uniformité visuelle avec la hiérarchie de rayon du design system.\n\n## Do & Don't\n✅ **Do**\n- Utiliser ce token pour tous les composants carte du système\n- Referencer `borderRadius.lg` plutôt que la valeur brute pour simplifier les mises à jour globales\n- Vérifier la cohérence avec les autres tokens de rayon (`sm`, `md`, `xl`)\n\n❌ **Don't**\n- Appliquer manuellement une valeur de rayon au lieu du token\n- Combiner plusieurs tokens de rayon sur une même carte (choisir un seul niveau)\n- Utiliser ce token pour des éléments autres que des cartes (boutons, badges, etc.)"
+      },
+      "background": {
+        "description": "## Description développeur\nCouleur de fond par défaut appliquée aux composants de type carte dans le thème.\n\n## Cas d'usage principal\nUtiliser ce token pour définir l'arrière-plan des cartes (Card, Panel, Container) afin de maintenir une cohérence visuelle et thématique dans l'interface utilisateur.\n\n## Do & Don't\n\n✅ **Do**\n- Appliquer ce token sur l'élément conteneur principal d'une carte\n- Vérifier le contraste avec le texte pour respecter WCAG AA (ratio 4.5:1 minimum)\n- Utiliser ce token comme base et le combiner avec d'autres tokens pour les états (hover, focus, disabled)\n\n❌ **Don't**\n- Utiliser des valeurs de couleur hexadécimales en dur à la place du token\n- Appliquer ce token sur des éléments interactifs primaires (boutons, liens)\n- Modifier la valeur du token au niveau du composant sans justification documentée"
+      },
+      "padding": {
+        "description": "## Description développeur\nEspacement interne (padding) standard des cartes, utilisant la dimension médium du système de design.\n\n## Cas d'usage principal\nAppliquer une cohérence d'espacement interne sur tous les composants de type carte (Card, Panel, Container) pour garantir une hiérarchie visuelle uniforme et une lisibilité optimale du contenu.\n\n## Do & Don't\n✅ **Do**\n- Utiliser ce token pour tous les paddings de cartes standard de votre interface\n- Combiner avec d'autres espacements du système (spacing scale) pour créer des variations cohérentes\n- Tester l'espacement avec du contenu réel pour valider la lisibilité et l'accessibilité tactile (minimum 44×44px sur mobile)\n\n❌ **Don't**\n- Coder en dur des valeurs de padding au lieu d'utiliser le token\n- Mélanger ce token avec des paddings de catégories différentes (padding.button, padding.input)\n- Réduire l'espacement en dessous de la valeur définie sans justification documentée"
+      }
+    },
+    "boxShadow": {
+      "default": {
+        "description": "## Description développeur\nOmbre composite combinant une drop shadow externe et une inner shadow pour créer une profondeur visuelle subtile.\n\n## Cas d'usage principal\nAppliquer sur des cartes, des boîtes de contenu ou des surfaces élevées nécessitant une hiérarchie visuelle discrète sans contraste agressif.\n\n## Do & Don't\n\n✅ **Do**\n- Utiliser sur des éléments de surface (cards, panels, modales) pour une subtilité visuelle\n- Vérifier le contraste final sur le fond pour garantir une lisibilité suffisante (WCAG AA minimum)\n- Tester sur les deux ombres pour assurer une cohérence visuelle globale\n\n❌ **Don't**\n- Ne pas appliquer sur du texte ou des icônes directement (risque d'accessibilité)\n- Ne pas cumuler avec d'autres box-shadows intensives (dégradation visuelle)\n- Ne pas utiliser sur des composants interactifs critiques sans tester l'affordance visuelle"
+      }
+    },
+    "typography": {
+      "H1": {
+        "Bold": {
+          "description": "## Description développeur\nStyle typographique pour titres de niveau 1 en poids gras. À utiliser pour les en-têtes principaux.\n\n## Cas d'usage principal\nTitres principaux de pages, sections majeures et éléments hiérarchiquement dominants. Assure une visibilité maximale et une clarté informationnelle en début de contenu.\n\n## Do & Don't\n\n✅ **Do**\n- Utiliser pour un seul titre H1 par page (sémantique HTML et SEO)\n- Respecter le contraste de couleur minimum 4.5:1 (WCAG AA)\n- Combiner avec un line-height adéquat pour la lisibilité (≥ 1.2)\n\n❌ **Don't**\n- Ne pas utiliser pour du texte de corps ou des labels courts\n- Ne pas empiler plusieurs H1 sur une même page\n- Ne pas réduire l'espace blanc autour pour améliorer la densité\n\n⚠️ *Note d'anomalie :* La valeur affichée comme `[object Object]` ne permet pas de vérifier les propriétés concrètes (taille, poids, hauteur de ligne, famille de police). Merci de transmettre la structure objet complète pour validation."
+        },
+        "Regular": {
+          "description": "## Description développeur\nStyle typographique pour les titres H1 en poids regular (400). Définit la fonte, la taille, la hauteur de ligne et l'espacement des en-têtes principaux.\n\n## Cas d'usage principal\nAppliquer ce token aux balises `<h1>` et éléments de titre principal de page pour garantir une hiérarchie visuelle cohérente et une lisibilité optimale dans toute l'application.\n\n## Do & Don't\n✅ **Do**\n- Utiliser sur un seul `<h1>` par page (référence SEO et accessibilité)\n- Combiner avec les propriétés de couleur et d'espacement du design system\n- Vérifier le contraste de couleur (ratio ≥ 4.5:1 WCAG AA)\n\n❌ **Don't**\n- Ne pas utiliser pour les sous-titres ou titres secondaires (utiliser H2, H3, etc.)\n- Ne pas surcharger avec des styles additionnels non prévus\n- Ne pas ignorer le `line-height` pour la lisibilité\n\n---\n\n⚠️ *Note d'anomalie :* La valeur affichée comme `[object Object]` empêche une validation visuelle. Veuillez vérifier que le token contient les propriétés attendues (fontSize, fontFamily, fontWeight, lineHeight, letterSpacing)."
+        }
+      },
+      "H2": {
+        "Bold": {
+          "description": "## Description développeur\nStyle typographique pour titres de niveau 2 en poids gras. Applique une hiérarchie visuelle intermédiaire avec emphase.\n\n## Cas d'usage principal\nTitres secondaires et sections principales dans les interfaces. Utilisé pour structurer le contenu entre H1 et H3, notamment dans les modales, cartes et sections de contenu.\n\n## Do & Don't\n✅ **Do**\n- Utiliser pour les titres de sous-sections et blocs de contenu principaux\n- Combiner avec un spacing cohérent pour renforcer la hiérarchie\n- Respecter le contraste de couleur (WCAG AA minimum 4.5:1)\n\n❌ **Don't**\n- Ne pas utiliser pour du contenu en corps de texte\n- Ne pas appliquer sur plusieurs lignes sans adapter la hauteur de ligne\n- Ne pas réduire le poids ou la taille pour \"ajuster\" le design\n\n---\n\n⚠️ *Note d'anomalie :* La valeur affichée comme `[object Object]` empêche la validation complète du token. Vérifier que la source de données expose correctement les propriétés CSS (font-size, font-weight, line-height, letter-spacing, etc.)."
+        },
+        "Regular": {
+          "description": "## Description développeur\nStyle typographique pour les titres de niveau 2 avec poids régulier (400). À appliquer sur les sous-titres principaux.\n\n## Cas d'usage principal\nUtilisez ce token pour les titres de section de niveau 2 dans les pages, dialogues et composants. Idéal pour structurer la hiérarchie de contenu après les H1 tout en maintenant une lisibilité optimale.\n\n## Do & Don't\n✅ **Do**\n- Appliquer sur les balises `<h2>` ou éléments avec `role=\"heading\" aria-level=\"2\"`\n- Respecter la hiérarchie : H2 après H1 uniquement, jamais en premier\n- Maintenir le contraste de couleur ≥ 4.5:1 pour la conformité WCAG AA\n\n❌ **Don't**\n- Utiliser comme texte de corps ou en petit format\n- Combiner avec d'autres poids typographiques H2 sans justification\n- Ignorer la valeur de l'objet fourni ; vérifier auprès du design system la configuration complète (taille, hauteur de ligne, etc.)\n\n---\n\n⚠️ *Note technique :* La valeur affichée comme `[object Object]` suggère un manque de sérialisation. Demandez à l'équipe le détail complet du token (fontSize, lineHeight, letterSpacing, fontWeight confirmé à 400)."
+        }
+      },
+      "Body": {
+        "description": "## Description développeur\nEnsemble de styles typographiques pour les textes de corps standard. Définit police, taille, poids et interligne pour la lisibilité optimale.\n\n## Cas d'usage principal\nAppliquer à tous les paragraphes, descriptions et contenus textuels de longueur moyenne (descriptions produits, articles, textes explicatifs). Assure une hiérarchie typographique cohérente et une lisibilité maximale sur tous les appareils.\n\n## Do & Don't\n✅ **Do**\n- Utiliser pour les contenus textuels principaux (p, span, div contenant du texte long)\n- Respecter l'interligne défini pour maintenir l'accessibilité WCAG (minimum 1.5x)\n- Combiner avec des tokens d'espacement pour une composition équilibrée\n\n❌ **Don't**\n- Ne pas modifier manuellement la taille de police ou l'interligne\n- Ne pas appliquer à des éléments de titre (utiliser heading tokens)\n- Ne pas réduire le contraste du texte en dessous de 4.5:1 (WCAG AA)\n\n---\n\n⚠️ **Note technique :** La valeur affichée comme `[object Object]` indique que le token contient un objet structuré (probablement `{ fontSize, lineHeight, fontFamily, fontWeight, letterSpacing }`). Vérifier la sérialisation pour accès direct aux propriétés individuelles en développement."
+      }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "core",
+      "semantic",
+      "component",
+      "typography",
+      "light",
+      "dark",
+      "theme"
+    ]
   }
 }
