@@ -164,7 +164,7 @@
     "color": {
       "bg": {
         "primary": {
-          "description": "Background principal"
+          "description": "Ceci est la couleur de Background principal"
         },
         "secondary": {
           "description": "Background secondaire"
