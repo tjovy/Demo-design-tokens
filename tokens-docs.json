@@ -1,7 +1,9 @@
 {
   "core": {
     "color": {
-      "white": {},
+      "white": {
+        "description": "Nouvelle description"
+      },
       "black": {},
       "transparent": {},
       "neutral": {
