@@ -1,4 +1,212 @@
 {
+  "button": {
+    "lg": {
+      "fontFamily": {
+        "value": "Inter",
+        "type": "fontFamilies"
+      },
+      "fontSize": {
+        "value": "16px",
+        "type": "fontSizes"
+      },
+      "fontWeight": {
+        "value": 600,
+        "type": "fontWeights"
+      },
+      "lineHeight": {
+        "value": 1.5,
+        "type": "lineHeights"
+      }
+    },
+    "md": {
+      "fontFamily": {
+        "value": "Inter",
+        "type": "fontFamilies"
+      },
+      "fontSize": {
+        "value": "14px",
+        "type": "fontSizes"
+      },
+      "fontWeight": {
+        "value": 600,
+        "type": "fontWeights"
+      },
+      "lineHeight": {
+        "value": 1.5,
+        "type": "lineHeights"
+      }
+    },
+    "sm": {
+      "fontFamily": {
+        "value": "Inter",
+        "type": "fontFamilies"
+      },
+      "fontSize": {
+        "value": "14px",
+        "type": "fontSizes"
+      },
+      "fontWeight": {
+        "value": 600,
+        "type": "fontWeights"
+      },
+      "lineHeight": {
+        "value": 1.5,
+        "type": "lineHeights"
+      }
+    },
+    "size": {
+      "sm": {
+        "paddingX": {
+          "value": "8px",
+          "type": "spacing",
+          "description": "8px"
+        },
+        "paddingY": {
+          "value": "4px",
+          "type": "spacing",
+          "description": "4px"
+        },
+        "fontSize": {
+          "value": "14px",
+          "type": "fontSizes",
+          "description": "14px"
+        },
+        "lineHeight": {
+          "value": 1.5,
+          "type": "lineHeights"
+        },
+        "gap": {
+          "value": "4px",
+          "type": "spacing",
+          "description": "4px"
+        },
+        "minHeight": {
+          "value": "32px",
+          "type": "sizing"
+        },
+        "iconSize": {
+          "value": "16px",
+          "type": "sizing"
+        }
+      },
+      "md": {
+        "paddingX": {
+          "value": "16px",
+          "type": "spacing",
+          "description": "16px"
+        },
+        "paddingY": {
+          "value": "8px",
+          "type": "spacing",
+          "description": "8px"
+        },
+        "fontSize": {
+          "value": "14px",
+          "type": "fontSizes",
+          "description": "14px"
+        },
+        "lineHeight": {
+          "value": 1.5,
+          "type": "lineHeights"
+        },
+        "gap": {
+          "value": "8px",
+          "type": "spacing",
+          "description": "8px"
+        },
+        "minHeight": {
+          "value": "40px",
+          "type": "sizing"
+        },
+        "iconSize": {
+          "value": "20px",
+          "type": "sizing"
+        }
+      },
+      "lg": {
+        "paddingX": {
+          "value": "24px",
+          "type": "spacing",
+          "description": "24px"
+        },
+        "paddingY": {
+          "value": "8px",
+          "type": "spacing",
+          "description": "8px"
+        },
+        "fontSize": {
+          "value": "16px",
+          "type": "fontSizes",
+          "description": "16px"
+        },
+        "lineHeight": {
+          "value": 1.5,
+          "type": "lineHeights"
+        },
+        "gap": {
+          "value": "8px",
+          "type": "spacing",
+          "description": "8px"
+        },
+        "minHeight": {
+          "value": "48px",
+          "type": "sizing"
+        },
+        "iconSize": {
+          "value": "24px",
+          "type": "sizing"
+        }
+      }
+    },
+    "radius": {
+      "value": "8px",
+      "type": "borderRadius"
+    },
+    "fontWeight": {
+      "value": 600,
+      "type": "fontWeights"
+    },
+    "fontFamily": {
+      "value": "Inter",
+      "type": "fontFamilies"
+    },
+    "transition": {
+      "value": "all 150ms ease-in-out",
+      "type": "other"
+    },
+    "focus": {
+      "ringWidth": {
+        "value": "2px",
+        "type": "borderWidth"
+      },
+      "ringOffset": {
+        "value": "2px",
+        "type": "spacing"
+      },
+      "ringColor": {
+        "value": "#3B82F6",
+        "type": "color"
+      }
+    }
+  },
+  "card": {
+    "radius": {
+      "value": "12px",
+      "type": "borderRadius"
+    },
+    "bg": {
+      "value": "#FFFFFF",
+      "type": "color"
+    },
+    "border": {
+      "value": "#E5E7EB",
+      "type": "color"
+    },
+    "shadow": {
+      "value": "0 1px 2px 0 #0000000d",
+      "type": "boxShadow"
+    }
+  },
   "heading": {
     "h1": {
       "fontFamily": {
@@ -201,200 +409,6 @@
       }
     }
   },
-  "button": {
-    "lg": {
-      "fontFamily": {
-        "value": "Inter",
-        "type": "fontFamilies"
-      },
-      "fontSize": {
-        "value": "16px",
-        "type": "fontSizes"
-      },
-      "fontWeight": {
-        "value": 600,
-        "type": "fontWeights"
-      },
-      "lineHeight": {
-        "value": 1.5,
-        "type": "lineHeights"
-      }
-    },
-    "md": {
-      "fontFamily": {
-        "value": "Inter",
-        "type": "fontFamilies"
-      },
-      "fontSize": {
-        "value": "14px",
-        "type": "fontSizes"
-      },
-      "fontWeight": {
-        "value": 600,
-        "type": "fontWeights"
-      },
-      "lineHeight": {
-        "value": 1.5,
-        "type": "lineHeights"
-      }
-    },
-    "sm": {
-      "fontFamily": {
-        "value": "Inter",
-        "type": "fontFamilies"
-      },
-      "fontSize": {
-        "value": "14px",
-        "type": "fontSizes"
-      },
-      "fontWeight": {
-        "value": 600,
-        "type": "fontWeights"
-      },
-      "lineHeight": {
-        "value": 1.5,
-        "type": "lineHeights"
-      }
-    },
-    "size": {
-      "sm": {
-        "paddingX": {
-          "value": "8px",
-          "type": "spacing",
-          "description": "8px"
-        },
-        "paddingY": {
-          "value": "4px",
-          "type": "spacing",
-          "description": "4px"
-        },
-        "fontSize": {
-          "value": "14px",
-          "type": "fontSizes",
-          "description": "14px"
-        },
-        "lineHeight": {
-          "value": 1.5,
-          "type": "lineHeights"
-        },
-        "gap": {
-          "value": "4px",
-          "type": "spacing",
-          "description": "4px"
-        },
-        "minHeight": {
-          "value": "32px",
-          "type": "sizing"
-        },
-        "iconSize": {
-          "value": "16px",
-          "type": "sizing"
-        }
-      },
-      "md": {
-        "paddingX": {
-          "value": "16px",
-          "type": "spacing",
-          "description": "16px"
-        },
-        "paddingY": {
-          "value": "8px",
-          "type": "spacing",
-          "description": "8px"
-        },
-        "fontSize": {
-          "value": "14px",
-          "type": "fontSizes",
-          "description": "14px"
-        },
-        "lineHeight": {
-          "value": 1.5,
-          "type": "lineHeights"
-        },
-        "gap": {
-          "value": "8px",
-          "type": "spacing",
-          "description": "8px"
-        },
-        "minHeight": {
-          "value": "40px",
-          "type": "sizing"
-        },
-        "iconSize": {
-          "value": "20px",
-          "type": "sizing"
-        }
-      },
-      "lg": {
-        "paddingX": {
-          "value": "24px",
-          "type": "spacing",
-          "description": "24px"
-        },
-        "paddingY": {
-          "value": "8px",
-          "type": "spacing",
-          "description": "8px"
-        },
-        "fontSize": {
-          "value": "16px",
-          "type": "fontSizes",
-          "description": "16px"
-        },
-        "lineHeight": {
-          "value": 1.5,
-          "type": "lineHeights"
-        },
-        "gap": {
-          "value": "8px",
-          "type": "spacing",
-          "description": "8px"
-        },
-        "minHeight": {
-          "value": "48px",
-          "type": "sizing"
-        },
-        "iconSize": {
-          "value": "24px",
-          "type": "sizing"
-        }
-      }
-    },
-    "radius": {
-      "value": "8px",
-      "type": "borderRadius"
-    },
-    "borderWidth": {
-      "value": "1px",
-      "type": "borderWidth"
-    },
-    "fontWeight": {
-      "value": 600,
-      "type": "fontWeights"
-    },
-    "fontFamily": {
-      "value": "Inter",
-      "type": "fontFamilies"
-    },
-    "transition": {
-      "value": "all 150ms ease-in-out",
-      "type": "other"
-    },
-    "focus": {
-      "ringWidth": {
-        "value": "2px",
-        "type": "borderWidth"
-      },
-      "ringOffset": {
-        "value": "2px",
-        "type": "spacing"
-      },
-      "ringColor": {
-        "value": "#3B82F6",
-        "type": "color"
-      }
-    }
-  },
   "input": {
     "size": {
       "sm": {
@@ -507,38 +521,6 @@
       "type": "borderWidth"
     }
   },
-  "card": {
-    "padding": {
-      "sm": {
-        "value": "16px",
-        "type": "spacing"
-      },
-      "md": {
-        "value": "24px",
-        "type": "spacing"
-      },
-      "lg": {
-        "value": "32px",
-        "type": "spacing"
-      }
-    },
-    "radius": {
-      "value": "12px",
-      "type": "borderRadius"
-    },
-    "bg": {
-      "value": "#FFFFFF",
-      "type": "color"
-    },
-    "border": {
-      "value": "#E5E7EB",
-      "type": "color"
-    },
-    "shadow": {
-      "value": "0 1px 2px 0 #0000000d",
-      "type": "boxShadow"
-    }
-  },
   "badge": {
     "paddingX": {
       "value": "8px",
@@ -616,7 +598,7 @@
         "description": "Texte désactivé"
       },
       "link": {
-        "value": "#1E40AF",
+        "value": "#ff00e2",
         "type": "color",
         "description": "Liens"
       },
@@ -652,7 +634,7 @@
       "primary": {
         "bg": {
           "default": {
-            "value": "#1E40AF",
+            "value": "#ff00e2",
             "type": "color",
             "description": "Bouton primary - fond"
           },
@@ -686,7 +668,7 @@
         },
         "border": {
           "default": {
-            "value": "#1E40AF",
+            "value": "#ff00e2",
             "type": "color",
             "description": "Bouton primary - bordure"
           },
@@ -1024,7 +1006,7 @@
         "type": "color"
       },
       "600": {
-        "value": "#1E40AF",
+        "value": "#ff00e2",
         "type": "color"
       },
       "700": {
@@ -1666,6 +1648,36 @@
     "widest": {
       "value": "0.1em",
       "type": "letterSpacing"
+    }
+  },
+  "tokenSetOrder": {
+    "0": {
+      "value": "core",
+      "type": "other"
+    },
+    "1": {
+      "value": "semantic",
+      "type": "other"
+    },
+    "2": {
+      "value": "component",
+      "type": "other"
+    },
+    "3": {
+      "value": "typography",
+      "type": "other"
+    },
+    "4": {
+      "value": "light",
+      "type": "other"
+    },
+    "5": {
+      "value": "dark",
+      "type": "other"
+    },
+    "6": {
+      "value": "theme",
+      "type": "other"
     }
   }
 }

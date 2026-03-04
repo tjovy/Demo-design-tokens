@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 04 Mar 2026 16:08:32 GMT
+ * Generated on Wed, 04 Mar 2026 16:16:26 GMT
  */
 
 :root {
@@ -331,19 +331,7 @@
   --opacity-100: 1;
   --font-family-sans: Inter;
   --font-family-mono: JetBrains Mono;
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 30px;
-  --font-size-4xl: 36px;
   --font-size-5xl: 48px;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
   --line-height-none: 1;
   --line-height-tight: 1.25;
   --line-height-snug: 1.375;
