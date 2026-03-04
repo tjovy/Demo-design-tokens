@@ -598,7 +598,7 @@
         "description": "Texte désactivé"
       },
       "link": {
-        "value": "#ff00e2",
+        "value": "#273495",
         "type": "color",
         "description": "Liens"
       },
@@ -634,7 +634,7 @@
       "primary": {
         "bg": {
           "default": {
-            "value": "#ff00e2",
+            "value": "#273495",
             "type": "color",
             "description": "Bouton primary - fond"
           },
@@ -668,7 +668,7 @@
         },
         "border": {
           "default": {
-            "value": "#ff00e2",
+            "value": "#273495",
             "type": "color",
             "description": "Bouton primary - bordure"
           },
@@ -1006,7 +1006,7 @@
         "type": "color"
       },
       "600": {
-        "value": "#ff00e2",
+        "value": "#273495",
         "type": "color"
       },
       "700": {
