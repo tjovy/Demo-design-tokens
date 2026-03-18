@@ -37,6 +37,7 @@ export const Input = ({
 }) => {
   const [internalValue, setInternalValue] = React.useState(defaultValue);
   const generatedId = React.useId();
+  const helperTextId = React.useId();
   const isControlled = controlledValue !== undefined;
   const value = isControlled ? controlledValue : internalValue;
 
@@ -79,6 +80,7 @@ export const Input = ({
           value={value}
           onChange={handleChange}
           aria-invalid={isError ? 'true' : undefined}
+          aria-describedby={helperText ? helperTextId : undefined}
           {...rest}
         />
         {trailingIcon && (
@@ -88,7 +90,10 @@ export const Input = ({
         )}
       </div>
       {helperText && (
-        <span className={`input-wrapper__helper${isError ? ' input-wrapper__helper--error' : ''}`}>
+        <span
+          id={helperTextId}
+          className={`input-wrapper__helper${isError ? ' input-wrapper__helper--error' : ''}`}
+        >
           {helperText}
         </span>
       )}

@@ -3,7 +3,7 @@ import * as React from "react";
 export const Badge = ({ variant = "primary", children = "Badge" }) => {
   const variantClass = `badge--${variant}`;
   return (
-    <span className={`badge ${variantClass}`} role="status">
+    <span className={`badge ${variantClass}`}>
       {children}
     </span>
   );

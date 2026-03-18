@@ -8,17 +8,38 @@ export const Card = ({
   footer,
   children,
   className = "",
+  onClick,
+  onKeyDown,
   ...props
 }) => {
   const sizeClass = `card--${size}`;
   const interactiveClass = interactive ? "card--interactive" : "";
-  const Tag = interactive ? "button" : "div";
-  const tagProps = interactive ? { type: "button" } : {};
+
+  const handleKeyDown = (event) => {
+    onKeyDown?.(event);
+    if (!interactive || event.defaultPrevented) return;
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onClick?.(event);
+    }
+  };
+
+  const interactiveProps = interactive
+    ? {
+        role: "button",
+        tabIndex: 0,
+        onClick,
+        onKeyDown: handleKeyDown,
+      }
+    : {
+        onClick,
+        onKeyDown,
+      };
 
   return (
-    <Tag
+    <div
       className={["card", sizeClass, interactiveClass, className].filter(Boolean).join(" ")}
-      {...tagProps}
+      {...interactiveProps}
       {...props}
     >
       {(title || description) && (
@@ -29,7 +50,7 @@ export const Card = ({
       )}
       {children && <div className="card__body">{children}</div>}
       {footer && <div className="card__footer">{footer}</div>}
-    </Tag>
+    </div>
   );
 };
 
