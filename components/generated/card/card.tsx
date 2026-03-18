@@ -1,4 +1,6 @@
-const Card = ({
+import * as React from "react";
+
+export const Card = ({
   size = "md",
   interactive = false,
   title,
@@ -11,10 +13,12 @@ const Card = ({
   const sizeClass = `card--${size}`;
   const interactiveClass = interactive ? "card--interactive" : "";
   const Tag = interactive ? "button" : "div";
+  const tagProps = interactive ? { type: "button" } : {};
 
   return (
     <Tag
       className={["card", sizeClass, interactiveClass, className].filter(Boolean).join(" ")}
+      {...tagProps}
       {...props}
     >
       {(title || description) && (
@@ -30,7 +34,7 @@ const Card = ({
 };
 
 /* Demo */
-const CardDemo = () => {
+export const CardDemo = () => {
   const sizes = ["sm", "md", "lg"];
   const labels = { sm: "Size=SM — padding 16px", md: "Size=MD — padding 24px", lg: "Size=LG — padding 32px" };
 
@@ -66,3 +70,5 @@ const CardDemo = () => {
     </div>
   );
 };
+
+export default Card;

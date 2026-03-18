@@ -1,4 +1,6 @@
-const Badge = ({ variant = "primary", children = "Badge" }) => {
+import * as React from "react";
+
+export const Badge = ({ variant = "primary", children = "Badge" }) => {
   const variantClass = `badge--${variant}`;
   return (
     <span className={`badge ${variantClass}`} role="status">
@@ -7,7 +9,7 @@ const Badge = ({ variant = "primary", children = "Badge" }) => {
   );
 };
 
-const BadgeDemo = () => {
+export const BadgeDemo = () => {
   const variants = ["primary", "success", "warning", "danger", "neutral"];
   const labels = {
     primary: "Primary",
@@ -31,3 +33,5 @@ const BadgeDemo = () => {
     </div>
   );
 };
+
+export default Badge;

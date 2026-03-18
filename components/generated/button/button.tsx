@@ -1,4 +1,6 @@
-const Button = ({
+import * as React from 'react';
+
+export const Button = ({
   variant = 'primary',
   size = 'md',
   disabled = false,
@@ -49,7 +51,7 @@ const sectionStyle = { display:'flex', flexWrap:'wrap', alignItems:'center', gap
 const labelStyle  = { fontFamily:'Inter,sans-serif', fontSize:'11px', color:'#6B7280', textTransform:'uppercase', letterSpacing:'0.05em', marginBottom:'4px' };
 const groupStyle  = { marginBottom:'24px' };
 
-const ButtonDemo = () => (
+export const ButtonDemo = () => (
   <div style={{ padding:'32px', background:'#F9FAFB', fontFamily:'Inter,sans-serif' }}>
 
     <div style={groupStyle}>
@@ -110,3 +112,5 @@ const ButtonDemo = () => (
 
   </div>
 );
+
+export default Button;

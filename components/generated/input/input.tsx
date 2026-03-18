@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 const IconSearch = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
     <circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5"/>
@@ -19,7 +21,7 @@ const IconClear = ({ onClick }) => (
   </button>
 );
 
-const Input = ({
+export const Input = ({
   size = 'md',
   state = 'default',
   label,
@@ -34,6 +36,7 @@ const Input = ({
   ...rest
 }) => {
   const [internalValue, setInternalValue] = React.useState(defaultValue);
+  const generatedId = React.useId();
   const isControlled = controlledValue !== undefined;
   const value = isControlled ? controlledValue : internalValue;
 
@@ -52,7 +55,7 @@ const Input = ({
     onChange && onChange(e);
   };
 
-  const inputId = id || `input-${size}-${state}`;
+  const inputId = id || generatedId;
 
   return (
     <div className="input-wrapper">
@@ -97,7 +100,7 @@ const Input = ({
 const SIZES = ['sm', 'md', 'lg'];
 const STATES = ['default', 'error', 'disabled'];
 
-const Demo = () => (
+export const InputDemo = () => (
   <div className="input-demo">
     {/* Size matrix */}
     <div>
@@ -192,4 +195,4 @@ const Demo = () => (
   </div>
 );
 
-render(<Demo />);
+export default Input;
