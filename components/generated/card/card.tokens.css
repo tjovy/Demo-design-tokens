@@ -1,0 +1,113 @@
+:root {
+  /* Component tokens — card */
+  --component-card-bg: var(--semantic-color-bg-primary, #FFFFFF);
+  --component-card-border: var(--semantic-color-border-default, #E5E7EB);
+  --component-card-radius: var(--semantic-radius-lg, 12px);
+  --component-card-shadow: var(--semantic-shadow-100, 0px 1px 3px 0px rgba(0,0,0,0.1));
+
+  /* ⚠️ TOKEN_MANQUANT: component.card.padding.sm — Figma: 16px */
+  --component-card-padding-sm: var(--spacing-md, 16px);
+
+  /* ⚠️ TOKEN_MANQUANT: component.card.padding.md — Figma: 24px */
+  --component-card-padding-md: var(--spacing-lg, 24px);
+
+  /* ⚠️ TOKEN_MANQUANT: component.card.padding.lg — Figma: 32px */
+  --component-card-padding-lg: var(--spacing-xl, 32px);
+}
+
+/* Base block */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+
+  background-color: var(--component-card-bg);
+  border: 1px solid var(--component-card-border);
+  border-radius: var(--component-card-radius);
+  box-shadow: var(--component-card-shadow);
+
+  /* Default size = MD */
+  padding: var(--component-card-padding-md);
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Size modifiers */
+.card--sm {
+  padding: var(--component-card-padding-sm);
+}
+
+.card--md {
+  padding: var(--component-card-padding-md);
+}
+
+.card--lg {
+  padding: var(--component-card-padding-lg);
+}
+
+/* Elements */
+.card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.card__title {
+  font-family: var(--typography-heading-font-family, inherit);
+  font-size: var(--typography-heading-font-size, 1rem);
+  font-weight: var(--typography-heading-font-weight, 600);
+  line-height: var(--typography-heading-line-height, 1.5);
+  color: var(--semantic-color-text-primary, #111827);
+  margin: 0;
+}
+
+.card__description {
+  font-family: var(--typography-body-font-family, inherit);
+  font-size: var(--typography-body-font-size, 0.875rem);
+  font-weight: var(--typography-body-font-weight, 400);
+  line-height: var(--typography-body-line-height, 1.5);
+  color: var(--semantic-color-text-secondary, #6B7280);
+  margin: 0;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+  width: 100%;
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Interactive variant */
+.card--interactive {
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.card--interactive:hover:not(:disabled) {
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.12);
+  border-color: var(--semantic-color-border-emphasis, #D1D5DB);
+}
+
+.card--interactive:active:not(:disabled) {
+  box-shadow: var(--component-card-shadow);
+  border-color: var(--semantic-color-border-default, #E5E7EB);
+}
+
+.card--interactive:focus-visible {
+  outline: 2px solid var(--semantic-color-border-emphasis, #6366F1);
+  outline-offset: 2px;
+}
