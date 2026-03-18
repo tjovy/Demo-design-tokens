@@ -1,0 +1,258 @@
+:root {
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.primary — Figma: #d90a79 */
+  --component-button-color-bg-primary: var(--component-button-color-bg-primary, #d90a79);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.primary-hover — Figma: #1D4ED8 */
+  --component-button-color-bg-primary-hover: var(--component-button-color-bg-primary-hover, #1D4ED8);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.disabled — Figma: #F3F4F6 */
+  --component-button-color-bg-disabled: var(--component-button-color-bg-disabled, #F3F4F6);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.secondary — Figma: #FFFFFF */
+  --component-button-color-bg-secondary: var(--component-button-color-bg-secondary, #FFFFFF);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.danger — Figma: #DC2626 */
+  --component-button-color-bg-danger: var(--component-button-color-bg-danger, #DC2626);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.border.primary — Figma: #d90a79 */
+  --component-button-color-border-primary: var(--component-button-color-border-primary, #d90a79);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.border.secondary — Figma: #D1D5DB */
+  --component-button-color-border-secondary: var(--component-button-color-border-secondary, #D1D5DB);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.text.primary — Figma: #FFFFFF */
+  --component-button-color-text-primary: var(--component-button-color-text-primary, #FFFFFF);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.text.secondary — Figma: #374151 */
+  --component-button-color-text-secondary: var(--component-button-color-text-secondary, #374151);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.text.danger — Figma: #FFFFFF */
+  --component-button-color-text-danger: var(--component-button-color-text-danger, #FFFFFF);
+  /* ⚠️ TOKEN_MANQUANT: component.button.radius — Figma: 8px */
+  --component-button-radius: var(--component-button-radius, 8px);
+  /* ⚠️ TOKEN_MANQUANT: component.button.border-width — Figma: 1px */
+  --component-button-border-width: var(--component-button-border-width, 1px);
+  /* ⚠️ TOKEN_MANQUANT: component.button.font-family — Figma: Inter */
+  --component-button-font-family: var(--component-button-font-family, 'Inter', sans-serif);
+  /* ⚠️ TOKEN_MANQUANT: component.button.font-weight — Figma: 600 */
+  --component-button-font-weight: var(--component-button-font-weight, 600);
+  /* ⚠️ TOKEN_MANQUANT: component.button.line-height — Figma: 20px */
+  --component-button-line-height: var(--component-button-line-height, 20px);
+  /* ⚠️ TOKEN_MANQUANT: component.button.transition — Figma: all 150ms ease-in-out */
+  --component-button-transition: var(--component-button-transition, all 150ms ease-in-out);
+  /* ⚠️ TOKEN_MANQUANT: component.button.focus.ring-width — Figma: 2px */
+  --component-button-focus-ring-width: var(--component-button-focus-ring-width, 2px);
+  /* ⚠️ TOKEN_MANQUANT: component.button.focus.ring-offset — Figma: 2px */
+  --component-button-focus-ring-offset: var(--component-button-focus-ring-offset, 2px);
+  /* ⚠️ TOKEN_MANQUANT: component.button.focus.ring-color — Figma: #d90a79 */
+  --component-button-focus-ring-color: var(--component-button-focus-ring-color, #d90a79);
+  /* ⚠️ TOKEN_MANQUANT: component.button.opacity.disabled — Figma: 0.5 */
+  --component-button-opacity-disabled: var(--component-button-opacity-disabled, 0.5);
+
+  /* Size SM */
+  --component-button-font-size-sm: var(--component-button-font-size-sm, 14px);
+  --component-button-padding-y-sm: var(--component-button-padding-y-sm, 4px);
+  --component-button-padding-x-sm: var(--component-button-padding-x-sm, 8px);
+  --component-button-gap-sm: var(--component-button-gap-sm, 4px);
+  --component-button-min-height-sm: var(--component-button-min-height-sm, 32px);
+  --component-button-icon-size-sm: var(--component-button-icon-size-sm, 16px);
+
+  /* Size MD */
+  --component-button-font-size-md: var(--component-button-font-size-md, 14px);
+  --component-button-padding-y-md: var(--component-button-padding-y-md, 8px);
+  --component-button-padding-x-md: var(--component-button-padding-x-md, 16px);
+  --component-button-gap-md: var(--component-button-gap-md, 8px);
+  --component-button-min-height-md: var(--component-button-min-height-md, 40px);
+  --component-button-icon-size-md: var(--component-button-icon-size-md, 20px);
+
+  /* Size LG */
+  --component-button-font-size-lg: var(--component-button-font-size-lg, 16px);
+  --component-button-padding-y-lg: var(--component-button-padding-y-lg, 8px);
+  --component-button-padding-x-lg: var(--component-button-padding-x-lg, 24px);
+  --component-button-gap-lg: var(--component-button-gap-lg, 8px);
+  --component-button-min-height-lg: var(--component-button-min-height-lg, 48px);
+  --component-button-icon-size-lg: var(--component-button-icon-size-lg, 24px);
+}
+
+/* ── BASE ── */
+.button {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--component-button-gap-md);
+  padding: var(--component-button-padding-y-md) var(--component-button-padding-x-md);
+  min-height: var(--component-button-min-height-md);
+
+  font-family: var(--component-button-font-family);
+  font-size: var(--component-button-font-size-md);
+  font-weight: var(--component-button-font-weight);
+  line-height: var(--component-button-line-height);
+  text-align: center;
+  white-space: nowrap;
+
+  border-radius: var(--component-button-radius);
+  border: var(--component-button-border-width) solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: var(--component-button-transition);
+
+  /* Default = Primary */
+  background-color: var(--component-button-color-bg-primary);
+  border-color: var(--component-button-color-border-primary);
+  color: var(--component-button-color-text-primary);
+}
+
+/* ── FOCUS VISIBLE ── */
+.button:focus-visible {
+  outline: var(--component-button-focus-ring-width) solid var(--component-button-focus-ring-color);
+  outline-offset: var(--component-button-focus-ring-offset);
+}
+
+/* ── DISABLED ── */
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: var(--component-button-opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════
+   VARIANTS
+══════════════════════════════════ */
+
+/* Primary (default) */
+.button--primary {
+  background-color: var(--component-button-color-bg-primary);
+  border-color: var(--component-button-color-border-primary);
+  color: var(--component-button-color-text-primary);
+}
+
+.button--primary:hover:not(:disabled) {
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.primary-hover — Figma: #1D4ED8 */
+  background-color: var(--component-button-color-bg-primary-hover, #1D4ED8);
+  border-color: var(--component-button-color-bg-primary-hover, #1D4ED8);
+}
+
+.button--primary:active:not(:disabled) {
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.primary-active — Figma: (not specified, darker than hover) */
+  filter: brightness(0.9);
+}
+
+.button--primary:disabled,
+.button--primary[aria-disabled="true"] {
+  background-color: var(--component-button-color-bg-disabled, #F3F4F6);
+  border-color: var(--component-button-color-bg-disabled, #F3F4F6);
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.text.disabled — Figma: (not specified) */
+  color: var(--component-button-color-text-secondary, #374151);
+}
+
+/* Secondary */
+.button--secondary {
+  background-color: var(--component-button-color-bg-secondary);
+  border-color: var(--component-button-color-border-secondary);
+  color: var(--component-button-color-text-secondary);
+}
+
+.button--secondary:hover:not(:disabled) {
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.secondary-hover — Figma: (not specified) */
+  background-color: var(--component-button-color-bg-secondary-hover, #F9FAFB);
+}
+
+.button--secondary:active:not(:disabled) {
+  background-color: var(--component-button-color-bg-secondary-active, #F3F4F6);
+}
+
+/* Ghost */
+.button--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--component-button-color-text-ghost);
+}
+
+.button--ghost:hover:not(:disabled) {
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.ghost-hover — Figma: (not specified) */
+  background-color: var(--component-button-color-bg-ghost-hover, #F3F4F6);
+}
+
+.button--ghost:active:not(:disabled) {
+  background-color: var(--component-button-color-bg-ghost-active, #E5E7EB);
+}
+
+/* Danger */
+.button--danger {
+  background-color: var(--component-button-color-bg-danger);
+  border-color: var(--component-button-color-bg-danger);
+  color: var(--component-button-color-text-danger);
+}
+
+.button--danger:hover:not(:disabled) {
+  /* ⚠️ TOKEN_MANQUANT: component.button.color.bg.danger-hover — Figma: (not specified) */
+  background-color: var(--component-button-color-bg-danger-hover, #B91C1C);
+  border-color: var(--component-button-color-bg-danger-hover, #B91C1C);
+}
+
+.button--danger:active:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+/* ══════════════════════════════════
+   SIZES
+══════════════════════════════════ */
+.button--sm {
+  gap: var(--component-button-gap-sm);
+  padding: var(--component-button-padding-y-sm) var(--component-button-padding-x-sm);
+  min-height: var(--component-button-min-height-sm);
+  font-size: var(--component-button-font-size-sm);
+}
+
+.button--sm .button__icon {
+  width: var(--component-button-icon-size-sm);
+  height: var(--component-button-icon-size-sm);
+}
+
+.button--md {
+  gap: var(--component-button-gap-md);
+  padding: var(--component-button-padding-y-md) var(--component-button-padding-x-md);
+  min-height: var(--component-button-min-height-md);
+  font-size: var(--component-button-font-size-md);
+}
+
+.button--md .button__icon {
+  width: var(--component-button-icon-size-md);
+  height: var(--component-button-icon-size-md);
+}
+
+.button--lg {
+  gap: var(--component-button-gap-lg);
+  padding: var(--component-button-padding-y-lg) var(--component-button-padding-x-lg);
+  min-height: var(--component-button-min-height-lg);
+  font-size: var(--component-button-font-size-lg);
+}
+
+.button--lg .button__icon {
+  width: var(--component-button-icon-size-lg);
+  height: var(--component-button-icon-size-lg);
+}
+
+/* ── ICON ELEMENT ── */
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--component-button-icon-size-md);
+  height: var(--component-button-icon-size-md);
+}
+
+/* ── ICON-ONLY ── */
+.button--icon-only {
+  padding: var(--component-button-padding-y-md);
+  aspect-ratio: 1;
+}
+
+.button--icon-only.button--sm {
+  padding: var(--component-button-padding-y-sm);
+}
+
+.button--icon-only.button--lg {
+  padding: var(--component-button-padding-y-lg);
+}
+
+/* ── FULL WIDTH ── */
+.button--full-width {
+  width: 100%;
+}
