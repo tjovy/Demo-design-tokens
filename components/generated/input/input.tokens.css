@@ -1,0 +1,240 @@
+:root {
+  /* Component tokens — fallback to Figma exact values where DS token unknown */
+  --component-input-bg-default: var(--color-bg-primary, #FFFFFF);
+  --component-input-bg-disabled: var(--color-bg-disabled, #F9FAFB);
+
+  --component-input-text-default: var(--color-text-primary, #111827);
+  --component-input-text-placeholder: var(--color-text-tertiary, #9CA3AF);
+  --component-input-text-disabled: var(--color-text-disabled, #D1D5DB);
+
+  --component-input-border-default: var(--color-border-default, #D1D5DB);
+  --component-input-border-hover: var(--color-border-strong, #9CA3AF);
+  --component-input-border-focus: var(--color-border-focus, #3B82F6);
+  --component-input-border-error: var(--color-danger-500, #DC2626);
+  --component-input-border-disabled: var(--color-border-disabled, #D1D5DB);
+
+  --component-input-border-width: var(--border-width-default, 1px);
+  --component-input-border-width-focus: 2px; /* Figma: 2px focus state */
+
+  --component-input-radius: var(--radius-md, 8px);
+
+  /* ⚠️ TOKEN_MANQUANT: font.family.base — Figma: Inter */
+  --component-input-font-family: var(--font-family-base, 'Inter', sans-serif);
+
+  --component-input-line-height: 24px; /* Figma: 24px */
+  --component-input-font-weight: 400; /* Figma: 400 */
+
+  --component-input-gap: var(--spacing-xs, 8px); /* Figma: 8px */
+
+  /* Size — SM */
+  --component-input-sm-min-height: 32px;
+  --component-input-sm-padding-y: var(--spacing-xs, 4px);
+  --component-input-sm-padding-x: var(--spacing-sm, 8px);
+  --component-input-sm-font-size: var(--font-size-sm, 14px);
+
+  /* Size — MD */
+  --component-input-md-min-height: 40px;
+  --component-input-md-padding-y: var(--spacing-sm, 8px);
+  --component-input-md-padding-x: var(--spacing-sm, 8px);
+  --component-input-md-font-size: var(--font-size-md, 16px);
+
+  /* Size — LG */
+  --component-input-lg-min-height: 48px;
+  --component-input-lg-padding-y: var(--spacing-sm, 8px);
+  --component-input-lg-padding-x: var(--spacing-md, 16px);
+  --component-input-lg-font-size: var(--font-size-lg, 18px);
+}
+
+/* ─── Wrapper ─────────────────────────────────────────────── */
+.input-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.input-wrapper__label {
+  font-family: var(--component-input-font-family);
+  font-size: var(--component-input-md-font-size);
+  font-weight: 500;
+  color: var(--component-input-text-default);
+  line-height: var(--component-input-line-height);
+}
+
+.input-wrapper__helper {
+  font-family: var(--component-input-font-family);
+  font-size: var(--component-input-sm-font-size);
+  color: var(--component-input-text-placeholder);
+  line-height: var(--component-input-line-height);
+}
+
+.input-wrapper__helper--error {
+  color: var(--component-input-border-error);
+}
+
+/* ─── Field container (icon support) ─────────────────────── */
+.input-field {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  gap: var(--component-input-gap);
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: var(--component-input-bg-default);
+  border: var(--component-input-border-width) solid var(--component-input-border-default);
+  border-radius: var(--component-input-radius);
+
+  font-family: var(--component-input-font-family);
+  font-size: var(--component-input-md-font-size);
+  font-weight: var(--component-input-font-weight);
+  line-height: var(--component-input-line-height);
+  color: var(--component-input-text-default);
+
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  /* Default size = MD */
+  min-height: var(--component-input-md-min-height);
+  padding: var(--component-input-md-padding-y) var(--component-input-md-padding-x);
+}
+
+/* ─── Native input inside field ──────────────────────────── */
+.input-field__input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.input-field__input::placeholder {
+  color: var(--component-input-text-placeholder);
+}
+
+/* ─── Icon slots ──────────────────────────────────────────── */
+.input-field__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--component-input-text-placeholder);
+  pointer-events: none;
+}
+
+/* ─── Hover ───────────────────────────────────────────────── */
+.input-field:not(.input-field--disabled):hover {
+  border-color: var(--component-input-border-hover);
+}
+
+/* ─── Focus-within ────────────────────────────────────────── */
+.input-field:not(.input-field--disabled):focus-within {
+  border-color: var(--component-input-border-focus);
+  border-width: var(--component-input-border-width-focus);
+  /* compensate 1→2px to avoid layout shift */
+  padding: calc(var(--component-input-md-padding-y) - 1px) calc(var(--component-input-md-padding-x) - 1px);
+}
+
+.input-field__input:focus-visible {
+  outline: none;
+}
+
+/* ─── Error ───────────────────────────────────────────────── */
+.input-field--error {
+  border-color: var(--component-input-border-error);
+}
+
+.input-field--error:not(.input-field--disabled):hover {
+  border-color: var(--component-input-border-error);
+}
+
+.input-field--error:not(.input-field--disabled):focus-within {
+  border-color: var(--component-input-border-error);
+  border-width: var(--component-input-border-width-focus);
+}
+
+/* ─── Disabled ────────────────────────────────────────────── */
+.input-field--disabled {
+  background-color: var(--component-input-bg-disabled);
+  border-color: var(--component-input-border-disabled);
+  cursor: not-allowed;
+}
+
+.input-field--disabled .input-field__input {
+  color: var(--component-input-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.input-field--disabled .input-field__input::placeholder {
+  color: var(--component-input-text-disabled);
+}
+
+/* ─── SIZE VARIANTS ───────────────────────────────────────── */
+
+/* SM */
+.input-field--sm {
+  min-height: var(--component-input-sm-min-height);
+  padding: var(--component-input-sm-padding-y) var(--component-input-sm-padding-x);
+  font-size: var(--component-input-sm-font-size);
+}
+
+.input-field--sm:not(.input-field--disabled):focus-within {
+  padding: calc(var(--component-input-sm-padding-y) - 1px) calc(var(--component-input-sm-padding-x) - 1px);
+}
+
+/* MD (default — already set on .input-field) */
+.input-field--md {
+  min-height: var(--component-input-md-min-height);
+  padding: var(--component-input-md-padding-y) var(--component-input-md-padding-x);
+  font-size: var(--component-input-md-font-size);
+}
+
+.input-field--md:not(.input-field--disabled):focus-within {
+  padding: calc(var(--component-input-md-padding-y) - 1px) calc(var(--component-input-md-padding-x) - 1px);
+}
+
+/* LG */
+.input-field--lg {
+  min-height: var(--component-input-lg-min-height);
+  padding: var(--component-input-lg-padding-y) var(--component-input-lg-padding-x);
+  font-size: var(--component-input-lg-font-size);
+}
+
+.input-field--lg:not(.input-field--disabled):focus-within {
+  padding: calc(var(--component-input-lg-padding-y) - 1px) calc(var(--component-input-lg-padding-x) - 1px);
+}
+
+/* ─── Demo grid (Storybook only) ──────────────────────────── */
+.input-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background: #F3F4F6;
+  font-family: var(--component-input-font-family);
+}
+
+.input-demo__row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.input-demo__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
