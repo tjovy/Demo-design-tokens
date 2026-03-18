@@ -1,0 +1,79 @@
+:root {
+  /* Component Badge tokens */
+  --component-badge-padding-x: var(--spacing-sm, /* FALLBACK */ 8px);
+  --component-badge-padding-y: var(--spacing-xs, /* FALLBACK */ 4px);
+  --component-badge-font-size: var(--font-size-xs, /* FALLBACK */ 12px);
+  --component-badge-font-weight: var(--font-weight-medium, /* FALLBACK */ 500);
+  --component-badge-radius: var(--radius-full, /* FALLBACK */ 9999px);
+
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.bg.primary-subtle — Figma: #EFF6FF */
+  --semantic-color-bg-primary-subtle: var(--semantic-color-bg-primary-subtle, #EFF6FF);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.text.primary — Figma: #1D4ED8 */
+  --semantic-color-text-primary: var(--semantic-color-text-primary, #1D4ED8);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.bg.success-subtle — Figma: #F0FDF4 */
+  --semantic-color-bg-success-subtle: var(--semantic-color-bg-success-subtle, #F0FDF4);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.text.success — Figma: #15803D */
+  --semantic-color-text-success: var(--semantic-color-text-success, #15803D);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.bg.warning-subtle — Figma: #FFFBEB */
+  --semantic-color-bg-warning-subtle: var(--semantic-color-bg-warning-subtle, #FFFBEB);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.text.warning — Figma: #A16207 */
+  --semantic-color-text-warning: var(--semantic-color-text-warning, #A16207);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.bg.danger-subtle — Figma: #FEF2F2 */
+  --semantic-color-bg-danger-subtle: var(--semantic-color-bg-danger-subtle, #FEF2F2);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.text.danger — Figma: #B91C1C */
+  --semantic-color-text-danger: var(--semantic-color-text-danger, #B91C1C);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.bg.neutral-subtle — Figma: #F3F4F6 */
+  --semantic-color-bg-neutral-subtle: var(--semantic-color-bg-neutral-subtle, #F3F4F6);
+  /* ⚠️ TOKEN_MANQUANT: semantic.color.text.neutral — Figma: #374151 */
+  --semantic-color-text-neutral: var(--semantic-color-text-neutral, #374151);
+}
+
+/* Base */
+.badge {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* ⚠️ TOKEN_MANQUANT: spacing.gap.xs — Figma: 4px */
+  padding-top: var(--component-badge-padding-y);
+  padding-bottom: var(--component-badge-padding-y);
+  padding-left: var(--component-badge-padding-x);
+  padding-right: var(--component-badge-padding-x);
+  border-radius: var(--component-badge-radius);
+  font-family: Inter, sans-serif; /* ⚠️ TOKEN_MANQUANT: font.family.base — Figma: Inter */
+  font-size: var(--component-badge-font-size);
+  font-weight: var(--component-badge-font-weight);
+  line-height: 16px; /* ⚠️ TOKEN_MANQUANT: font.lineHeight.xs — Figma: 16px */
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Variant: Primary */
+.badge--primary {
+  background-color: var(--semantic-color-bg-primary-subtle);
+  color: var(--semantic-color-text-primary);
+}
+
+/* Variant: Success */
+.badge--success {
+  background-color: var(--semantic-color-bg-success-subtle);
+  color: var(--semantic-color-text-success);
+}
+
+/* Variant: Warning */
+.badge--warning {
+  background-color: var(--semantic-color-bg-warning-subtle);
+  color: var(--semantic-color-text-warning);
+}
+
+/* Variant: Danger */
+.badge--danger {
+  background-color: var(--semantic-color-bg-danger-subtle);
+  color: var(--semantic-color-text-danger);
+}
+
+/* Variant: Neutral */
+.badge--neutral {
+  background-color: var(--semantic-color-bg-neutral-subtle);
+  color: var(--semantic-color-text-neutral);
+}
