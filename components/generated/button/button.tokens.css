@@ -1,0 +1,67 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--semantic-font-family-default, Inter);
+  font-weight: var(--semantic-font-weight-semibold, 600);
+  border-radius: var(--component-button-radius, var(--semantic-radius-md, 8px));
+  border: var(--semantic-border-width-default, 1px) solid transparent;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--semantic-color-primary-500, #d90a79);
+  outline-offset: 2px;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Sizes */
+.btn--sm {
+  padding: var(--semantic-spacing-xs, 4px) var(--semantic-spacing-sm, 8px);
+  font-size: var(--semantic-font-size-sm, 14px);
+  line-height: 20px;
+  gap: var(--semantic-spacing-xs, 4px);
+  min-height: 32px;
+}
+.btn--md {
+  padding: var(--semantic-spacing-sm, 8px) var(--semantic-spacing-md, 16px);
+  font-size: var(--semantic-font-size-sm, 14px);
+  line-height: 20px;
+  gap: var(--semantic-spacing-sm, 8px);
+  min-height: 40px;
+}
+.btn--lg {
+  padding: var(--semantic-spacing-sm, 8px) var(--semantic-spacing-lg, 24px);
+  font-size: var(--semantic-font-size-md, 16px);
+  line-height: 24px;
+  gap: var(--semantic-spacing-sm, 8px);
+  min-height: 48px;
+}
+
+/* Variants */
+.btn--primary {
+  background: var(--component-button-primary-bg, #d90a79);
+  border-color: var(--component-button-primary-border, #d90a79);
+  color: #fff;
+}
+.btn--primary:hover:not(:disabled) { background: var(--component-button-primary-hover-bg, #1D4ED8); border-color: var(--component-button-primary-hover-bg, #1D4ED8); }
+
+.btn--secondary {
+  background: var(--component-button-secondary-bg, #FFFFFF);
+  border-color: var(--component-button-secondary-border, #D1D5DB);
+  color: var(--component-button-secondary-color, #374151);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--component-button-ghost-color, #374151);
+}
+
+.btn--danger {
+  background: var(--component-button-danger-bg, #DC2626);
+  border-color: var(--component-button-danger-bg, #DC2626);
+  color: #fff;
+}
