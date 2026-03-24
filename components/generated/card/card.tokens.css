@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  background: var(--color-bg-primary, #FFFFFF);
+  border: 1px solid var(--color-border-default, #E5E7EB);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: var(--shadow-100, 0px 1px 3px 0px rgba(0,0,0,0.1));
+}
+.card--sm { padding: var(--spacing-md, 16px); }
+.card--md { padding: var(--spacing-lg, 24px); }
+.card--lg { padding: var(--spacing-xl, 32px); }
