@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 24 Mar 2026 16:13:29 GMT
+ * Generated on Wed, 25 Mar 2026 13:53:48 GMT
  */
 
 :root {
@@ -394,6 +394,16 @@
   --color-green-800: #2f732e;
   --color-green-900: #2b5629;
   --color-green-950: #1a3219;
+  --theme-fg-default: #f9fafc;
+  --theme-fg-muted: #9ca3af;
+  --theme-fg-subtle: #6b7280;
+  --theme-bg-default: #111827;
+  --theme-bg-muted: #1f293c;
+  --theme-bg-subtle: #374151;
+  --theme-accent-default: #78aafb;
+  --theme-accent-on-accent: #ffffff;
+  --theme-accent-bg: #1f3766;
+  --theme-shadows-default: #0000004d;
   --font-family-default: Inter;
   --font-family-code: JetBrains Mono;
   --font-size-xs: 12;
@@ -497,15 +507,17 @@
   --token-set-order-1: core/core;
   --token-set-order-2: semantic;
   --token-set-order-3: semantic/semantic;
-  --token-set-order-4: component;
-  --token-set-order-5: component/component;
-  --token-set-order-6: typography;
-  --token-set-order-7: typography/typography;
-  --token-set-order-8: light;
-  --token-set-order-9: light/light;
-  --token-set-order-10: dark;
-  --token-set-order-11: dark/dark;
-  --token-set-order-12: theme;
-  --token-set-order-13: theme/theme;
-  --token-set-order-14: Tailwind Colors/Base;
+  --token-set-order-4: semantic/Light;
+  --token-set-order-5: semantic/Dark;
+  --token-set-order-6: component;
+  --token-set-order-7: component/component;
+  --token-set-order-8: typography;
+  --token-set-order-9: typography/typography;
+  --token-set-order-10: light;
+  --token-set-order-11: light/light;
+  --token-set-order-12: dark;
+  --token-set-order-13: dark/dark;
+  --token-set-order-14: theme;
+  --token-set-order-15: theme/theme;
+  --token-set-order-16: Tailwind Colors/Base;
 }
