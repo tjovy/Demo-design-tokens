@@ -5,7 +5,11 @@ on:
     branches:
       - main
     paths:
-      - 'tokens.json' # Le robot ne se réveille que si ce fichier précis est modifié
+      - 'tokens.json'
+      - 'package.json'
+      - 'config.js'
+      - 'scripts/prepare-source.js'
+      - 'scripts/sanitize.js'
 
 jobs:
   build:

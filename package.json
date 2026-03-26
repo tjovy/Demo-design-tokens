@@ -2,7 +2,7 @@
   "name": "@mon-entreprise/design-tokens",
   "version": "1.0.0",
   "scripts": {
-    "build": "token-transformer tokens.json tokens-fixed.json && node scripts/sanitize.js && style-dictionary build --config config.js"
+    "build": "node scripts/prepare-source.js && token-transformer tokens-build-source.json tokens-fixed.json && node scripts/sanitize.js && style-dictionary build --config config.js && rm -f tokens-build-source.json"
   },
   "devDependencies": {
     "style-dictionary": "^3.0.0",
