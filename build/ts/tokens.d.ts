@@ -225,6 +225,8 @@ export const SpacingLg: string;
 export const SpacingXl: string;
 export const Spacing2xl: string;
 export const Spacing3xl: string;
+export const SpacingActionGhostPaddingX: string;
+export const SpacingActionGhostPaddingY: string;
 export const Radius0: string;
 export const Radius4: string;
 export const Radius8: string;

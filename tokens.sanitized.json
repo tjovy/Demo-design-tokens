@@ -12,7 +12,8 @@
           "EFFECT_COLOR"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Pure white. #ffffff"
     },
     "black": {
       "value": "#000000",
@@ -26,7 +27,8 @@
           "EFFECT_COLOR"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Pure black. #000000"
     },
     "transparent": {
       "value": "#00000000",
@@ -40,7 +42,8 @@
           "EFFECT_COLOR"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Fully transparent. rgba(0,0,0,0)"
     },
     "neutral": {
       "0": {
@@ -55,7 +58,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 0. Raw hex color."
       },
       "50": {
         "value": "#f9fafb",
@@ -69,7 +73,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 50. Raw hex color."
       },
       "100": {
         "value": "#f3f4f6",
@@ -83,7 +88,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 100. Raw hex color."
       },
       "200": {
         "value": "#e5e7eb",
@@ -97,7 +103,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 200. Raw hex color."
       },
       "300": {
         "value": "#d1d5db",
@@ -111,7 +118,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 300. Raw hex color."
       },
       "400": {
         "value": "#9ca3af",
@@ -125,7 +133,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 400. Raw hex color."
       },
       "500": {
         "value": "#6b7280",
@@ -139,7 +148,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 500. Raw hex color."
       },
       "600": {
         "value": "#4b5563",
@@ -153,7 +163,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 600. Raw hex color."
       },
       "700": {
         "value": "#374151",
@@ -167,7 +178,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 700. Raw hex color."
       },
       "800": {
         "value": "#1f2937",
@@ -181,7 +193,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 800. Raw hex color."
       },
       "900": {
         "value": "#111827",
@@ -195,7 +208,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 900. Raw hex color."
       },
       "950": {
         "value": "#030712",
@@ -209,7 +223,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core neutral palette step 950. Raw hex color."
       }
     },
     "primary": {
@@ -225,7 +240,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 50. Raw hex color."
       },
       "100": {
         "value": "#dbeafe",
@@ -239,7 +255,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 100. Raw hex color."
       },
       "200": {
         "value": "#bfdbfe",
@@ -253,7 +270,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 200. Raw hex color."
       },
       "300": {
         "value": "#93c5fd",
@@ -267,7 +285,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 300. Raw hex color."
       },
       "400": {
         "value": "#60a5fa",
@@ -281,7 +300,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 400. Raw hex color."
       },
       "500": {
         "value": "#3b82f6",
@@ -295,7 +315,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 500. Raw hex color."
       },
       "600": {
         "value": "#2563eb",
@@ -309,7 +330,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 600. Raw hex color."
       },
       "700": {
         "value": "#1d4ed8",
@@ -323,7 +345,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 700. Raw hex color."
       },
       "800": {
         "value": "#1e40af",
@@ -337,7 +360,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 800. Raw hex color."
       },
       "900": {
         "value": "#1e3a8a",
@@ -351,7 +375,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 900. Raw hex color."
       },
       "950": {
         "value": "#172554",
@@ -365,7 +390,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core primary palette step 950. Raw hex color."
       }
     },
     "success": {
@@ -381,7 +407,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 50. Raw hex color."
       },
       "100": {
         "value": "#dcfce7",
@@ -395,7 +422,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 100. Raw hex color."
       },
       "200": {
         "value": "#bbf7d0",
@@ -409,7 +437,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 200. Raw hex color."
       },
       "300": {
         "value": "#86efac",
@@ -423,7 +452,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 300. Raw hex color."
       },
       "400": {
         "value": "#4ade80",
@@ -437,7 +467,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 400. Raw hex color."
       },
       "500": {
         "value": "#22c55e",
@@ -451,7 +482,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 500. Raw hex color."
       },
       "600": {
         "value": "#16a34a",
@@ -465,7 +497,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 600. Raw hex color."
       },
       "700": {
         "value": "#15803d",
@@ -479,7 +512,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 700. Raw hex color."
       },
       "800": {
         "value": "#166534",
@@ -493,7 +527,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 800. Raw hex color."
       },
       "900": {
         "value": "#14532d",
@@ -507,7 +542,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core success palette step 900. Raw hex color."
       }
     },
     "warning": {
@@ -523,7 +559,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 50. Raw hex color."
       },
       "100": {
         "value": "#fef3c7",
@@ -537,7 +574,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 100. Raw hex color."
       },
       "200": {
         "value": "#fde68a",
@@ -551,7 +589,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 200. Raw hex color."
       },
       "300": {
         "value": "#fcd34d",
@@ -565,7 +604,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 300. Raw hex color."
       },
       "400": {
         "value": "#fbbf24",
@@ -579,7 +619,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 400. Raw hex color."
       },
       "500": {
         "value": "#f59e0b",
@@ -593,7 +634,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 500. Raw hex color."
       },
       "600": {
         "value": "#d97706",
@@ -607,7 +649,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 600. Raw hex color."
       },
       "700": {
         "value": "#b45309",
@@ -621,7 +664,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 700. Raw hex color."
       },
       "800": {
         "value": "#92400e",
@@ -635,7 +679,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 800. Raw hex color."
       },
       "900": {
         "value": "#78350f",
@@ -649,7 +694,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core warning palette step 900. Raw hex color."
       }
     },
     "danger": {
@@ -665,7 +711,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 50. Raw hex color."
       },
       "100": {
         "value": "#fee2e2",
@@ -679,7 +726,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 100. Raw hex color."
       },
       "200": {
         "value": "#fecaca",
@@ -693,7 +741,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 200. Raw hex color."
       },
       "300": {
         "value": "#fca5a5",
@@ -707,7 +756,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 300. Raw hex color."
       },
       "400": {
         "value": "#f87171",
@@ -721,7 +771,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 400. Raw hex color."
       },
       "500": {
         "value": "#ef4444",
@@ -735,7 +786,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 500. Raw hex color."
       },
       "600": {
         "value": "#dc2626",
@@ -749,7 +801,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 600. Raw hex color."
       },
       "700": {
         "value": "#b91c1c",
@@ -763,7 +816,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 700. Raw hex color."
       },
       "800": {
         "value": "#991b1b",
@@ -777,7 +831,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 800. Raw hex color."
       },
       "900": {
         "value": "#7f1d1d",
@@ -791,7 +846,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core danger palette step 900. Raw hex color."
       }
     },
     "blue": {
@@ -1642,7 +1698,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core orange palette step 950. Raw hex color."
       }
     },
     "yellow": {
@@ -1658,7 +1715,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core yellow palette step 950. Raw hex color."
       }
     },
     "teal": {
@@ -1674,7 +1732,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core teal palette step 950. Raw hex color."
       }
     },
     "indigo": {
@@ -1690,7 +1749,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core indigo palette step 950. Raw hex color."
       }
     },
     "pink": {
@@ -1706,7 +1766,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Core pink palette step 950. Raw hex color."
       }
     },
     "bg": {
@@ -2525,7 +2586,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Success state color. Green palette."
         },
         "text": {
           "value": "{color.success.700}",
@@ -2538,7 +2600,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Success state color. Green palette."
         },
         "border": {
           "value": "{color.success.200}",
@@ -2551,7 +2614,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Success state color. Green palette."
         },
         "icon": {
           "value": "{color.success.500}",
@@ -2564,7 +2628,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Success state color. Green palette."
         }
       },
       "warning": {
@@ -2579,7 +2644,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Warning state color. Yellow/amber palette."
         },
         "text": {
           "value": "{color.warning.700}",
@@ -2592,7 +2658,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Warning state color. Yellow/amber palette."
         },
         "border": {
           "value": "{color.warning.200}",
@@ -2605,7 +2672,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Warning state color. Yellow/amber palette."
         },
         "icon": {
           "value": "{color.warning.500}",
@@ -2618,7 +2686,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Warning state color. Yellow/amber palette."
         }
       },
       "error": {
@@ -2633,7 +2702,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Error/danger state color. Red palette."
         },
         "text": {
           "value": "{color.danger.700}",
@@ -2646,7 +2716,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Error/danger state color. Red palette."
         },
         "border": {
           "value": "{color.danger.200}",
@@ -2659,7 +2730,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Error/danger state color. Red palette."
         },
         "icon": {
           "value": "{color.danger.500}",
@@ -2672,7 +2744,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Error/danger state color. Red palette."
         }
       },
       "info": {
@@ -2687,7 +2760,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Semantic color token. Alias to core palette."
         },
         "text": {
           "value": "{color.primary.700}",
@@ -2700,7 +2774,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Semantic color token. Alias to core palette."
         },
         "border": {
           "value": "{color.primary.200}",
@@ -2713,7 +2788,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Semantic color token. Alias to core palette."
         },
         "icon": {
           "value": "{color.primary.500}",
@@ -2726,7 +2802,8 @@
               "STROKE_COLOR"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Semantic color token. Alias to core palette."
         }
       }
     },
@@ -2742,7 +2819,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic color token. Alias to core palette."
       },
       "travel": {
         "value": "{color.green.500}",
@@ -2755,7 +2833,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic color token. Alias to core palette."
       },
       "society": {
         "value": "{color.red.500}",
@@ -2768,7 +2847,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic color token. Alias to core palette."
       },
       "politics": {
         "value": "{color.purple.500}",
@@ -2781,7 +2861,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic color token. Alias to core palette."
       }
     }
   },
@@ -2794,7 +2875,8 @@
           "FONT_FAMILY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font family token. Use as font-family in CSS."
     },
     "mono": {
       "value": "JetBrains Mono",
@@ -2804,7 +2886,8 @@
           "FONT_FAMILY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font family token. Use as font-family in CSS."
     }
   },
   "spacing": {
@@ -2817,7 +2900,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 0px"
     },
     "1": {
       "value": "4px",
@@ -2828,7 +2912,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 4px"
     },
     "2": {
       "value": "8px",
@@ -2839,7 +2924,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 8px"
     },
     "3": {
       "value": "12px",
@@ -2850,7 +2936,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 12px"
     },
     "4": {
       "value": "16px",
@@ -2861,7 +2948,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 16px"
     },
     "5": {
       "value": "20px",
@@ -2872,7 +2960,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 20px"
     },
     "6": {
       "value": "24px",
@@ -2883,7 +2972,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 24px"
     },
     "8": {
       "value": "32px",
@@ -2894,7 +2984,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 32px"
     },
     "10": {
       "value": "40px",
@@ -2905,7 +2996,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 40px"
     },
     "12": {
       "value": "48px",
@@ -2916,7 +3008,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 48px"
     },
     "16": {
       "value": "64px",
@@ -2927,7 +3020,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 64px"
     },
     "20": {
       "value": "80px",
@@ -2938,7 +3032,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 80px"
     },
     "24": {
       "value": "96px",
@@ -2949,7 +3044,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Spacing token. Raw value in px. Use as gap, padding, margin. CSS: 96px"
     },
     "none": {
       "value": "{spacing.0}",
@@ -2960,7 +3056,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Semantic spacing alias. Resolves from core spacing scale."
     },
     "xs": {
       "value": "{spacing.1}",
@@ -3047,7 +3144,32 @@
       "description": "64px - Espacement page"
     },
     "action": {
-      "ghost": {}
+      "ghost": {
+        "paddingX": {
+          "value": "{spacing.none}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT",
+              "GAP"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Semantic spacing alias. Resolves from core spacing scale."
+        },
+        "paddingY": {
+          "value": "{spacing.none}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT",
+              "GAP"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Semantic spacing alias. Resolves from core spacing scale."
+        }
+      }
     }
   },
   "radius": {
@@ -3059,7 +3181,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border radius token. CSS: 0px"
     },
     "4": {
       "value": "4px",
@@ -3069,7 +3192,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border radius token. CSS: 4px"
     },
     "8": {
       "value": "8px",
@@ -3079,7 +3203,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border radius token. CSS: 8px"
     },
     "12": {
       "value": "12px",
@@ -3089,7 +3214,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border radius token. CSS: 12px"
     },
     "16": {
       "value": "16px",
@@ -3099,7 +3225,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border radius token. CSS: 16px"
     },
     "24": {
       "value": "24px",
@@ -3109,7 +3236,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border radius token. CSS: 24px"
     },
     "999": {
       "value": "9999px",
@@ -3119,7 +3247,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Full/pill border radius. CSS: 9999px"
     },
     "none": {
       "value": "{radius.0}",
@@ -3129,7 +3258,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Semantic radius alias. Resolves from core radius scale."
     },
     "sm": {
       "value": "{radius.4}",
@@ -3185,7 +3315,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border width token. CSS: 0px"
     },
     "1": {
       "value": "1px",
@@ -3195,7 +3326,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border width token. CSS: 1px"
     },
     "2": {
       "value": "2px",
@@ -3205,7 +3337,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border width token. CSS: 2px"
     },
     "4": {
       "value": "4px",
@@ -3215,7 +3348,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Border width token. CSS: 4px"
     },
     "none": {
       "value": "{borderWidth.0}",
@@ -3225,7 +3359,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Semantic border width alias."
     },
     "default": {
       "value": "{borderWidth.1}",
@@ -3235,7 +3370,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Semantic border width alias."
     },
     "thick": {
       "value": "{borderWidth.2}",
@@ -3245,7 +3381,8 @@
           "STROKE_FLOAT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Semantic border width alias."
     }
   },
   "opacity": {
@@ -3258,7 +3395,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0 (range 0–1)"
     },
     "5": {
       "value": 0.05,
@@ -3269,7 +3407,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.05000000074505806 (range 0–1)"
     },
     "10": {
       "value": 0.1,
@@ -3280,7 +3419,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.10000000149011612 (range 0–1)"
     },
     "20": {
       "value": 0.2,
@@ -3291,7 +3431,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.20000000298023224 (range 0–1)"
     },
     "25": {
       "value": 0.25,
@@ -3302,7 +3443,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.25 (range 0–1)"
     },
     "30": {
       "value": 0.3,
@@ -3313,7 +3455,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.30000001192092896 (range 0–1)"
     },
     "40": {
       "value": 0.4,
@@ -3324,7 +3467,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.4000000059604645 (range 0–1)"
     },
     "50": {
       "value": 0.5,
@@ -3335,7 +3479,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.5 (range 0–1)"
     },
     "60": {
       "value": 0.6,
@@ -3346,7 +3491,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.6000000238418579 (range 0–1)"
     },
     "70": {
       "value": 0.7,
@@ -3357,7 +3503,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.699999988079071 (range 0–1)"
     },
     "75": {
       "value": 0.75,
@@ -3368,7 +3515,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.75 (range 0–1)"
     },
     "80": {
       "value": 0.8,
@@ -3379,7 +3527,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.800000011920929 (range 0–1)"
     },
     "90": {
       "value": 0.9,
@@ -3390,7 +3539,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.8999999761581421 (range 0–1)"
     },
     "95": {
       "value": 0.95,
@@ -3401,7 +3551,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 0.949999988079071 (range 0–1)"
     },
     "100": {
       "value": 1,
@@ -3412,7 +3563,8 @@
           "OPACITY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Opacity token. CSS value: 1 (range 0–1)"
     }
   },
   "fontSize": {
@@ -3424,7 +3576,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 12px"
     },
     "sm": {
       "value": "14px",
@@ -3434,7 +3587,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 14px"
     },
     "md": {
       "value": "16px",
@@ -3444,7 +3598,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 16px"
     },
     "lg": {
       "value": "18px",
@@ -3454,7 +3609,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 18px"
     },
     "xl": {
       "value": "20px",
@@ -3464,7 +3620,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 20px"
     },
     "2xl": {
       "value": "24px",
@@ -3474,7 +3631,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 24px"
     },
     "3xl": {
       "value": "30px",
@@ -3484,7 +3642,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 30px"
     },
     "4xl": {
       "value": "36px",
@@ -3494,7 +3653,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 36px"
     },
     "5xl": {
       "value": "48px",
@@ -3504,7 +3664,8 @@
           "FONT_SIZE"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font size token. CSS: 48px"
     }
   },
   "fontWeight": {
@@ -3516,7 +3677,8 @@
           "FONT_WEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font weight token. CSS: 400"
     },
     "medium": {
       "value": 500,
@@ -3526,7 +3688,8 @@
           "FONT_WEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font weight token. CSS: 500"
     },
     "semibold": {
       "value": 600,
@@ -3536,7 +3699,8 @@
           "FONT_WEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font weight token. CSS: 600"
     },
     "bold": {
       "value": 700,
@@ -3546,7 +3710,8 @@
           "FONT_WEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Font weight token. CSS: 700"
     }
   },
   "lineHeight": {
@@ -3558,7 +3723,8 @@
           "LINE_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Line height token. Unitless ratio. CSS: 1"
     },
     "tight": {
       "value": 1.25,
@@ -3568,7 +3734,8 @@
           "LINE_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Line height token. Unitless ratio. CSS: 1.25"
     },
     "snug": {
       "value": 1.375,
@@ -3578,7 +3745,8 @@
           "LINE_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Line height token. Unitless ratio. CSS: 1.375"
     },
     "normal": {
       "value": 1.5,
@@ -3588,7 +3756,8 @@
           "LINE_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Line height token. Unitless ratio. CSS: 1.5"
     },
     "relaxed": {
       "value": 1.625,
@@ -3598,7 +3767,8 @@
           "LINE_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Line height token. Unitless ratio. CSS: 1.625"
     },
     "loose": {
       "value": 2,
@@ -3608,7 +3778,8 @@
           "LINE_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Line height token. Unitless ratio. CSS: 2"
     }
   },
   "letterSpacing": {
@@ -3620,7 +3791,8 @@
           "LETTER_SPACING"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Letter spacing token. CSS: -0.800000011920929px"
     },
     "tight": {
       "value": "-0.4px",
@@ -3630,7 +3802,8 @@
           "LETTER_SPACING"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Letter spacing token. CSS: -0.4000000059604645px"
     },
     "normal": {
       "value": "0px",
@@ -3640,7 +3813,8 @@
           "LETTER_SPACING"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Letter spacing token. CSS: 0px"
     },
     "wide": {
       "value": "0.4px",
@@ -3650,7 +3824,8 @@
           "LETTER_SPACING"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Letter spacing token. CSS: 0.4000000059604645px"
     },
     "wider": {
       "value": "0.8px",
@@ -3660,7 +3835,8 @@
           "LETTER_SPACING"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Letter spacing token. CSS: 0.800000011920929px"
     },
     "widest": {
       "value": "1.6px",
@@ -3670,7 +3846,8 @@
           "LETTER_SPACING"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Letter spacing token. CSS: 1.600000023841858px"
     }
   },
   "theme": {
@@ -3683,7 +3860,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       },
       "muted": {
         "value": "{color.neutral.500}",
@@ -3693,7 +3871,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       },
       "subtle": {
         "value": "{color.neutral.400}",
@@ -3703,7 +3882,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       }
     },
     "bg": {
@@ -3716,7 +3896,8 @@
             "SHAPE_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic background color. Resolves from core palette."
       },
       "muted": {
         "value": "{color.neutral.50}",
@@ -3727,7 +3908,8 @@
             "SHAPE_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic background color. Resolves from core palette."
       },
       "subtle": {
         "value": "{color.neutral.100}",
@@ -3738,7 +3920,8 @@
             "SHAPE_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic background color. Resolves from core palette."
       }
     },
     "accent": {
@@ -3753,7 +3936,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       },
       "onAccent": {
         "value": "{color.white}",
@@ -3766,7 +3950,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       },
       "bg": {
         "value": "{color.primary.100}",
@@ -3779,7 +3964,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       }
     },
     "shadows": {
@@ -3791,7 +3977,8 @@
             "EFFECT_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level semantic color. Inherits from core."
       }
     }
   },
@@ -3829,7 +4016,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic line height alias."
       },
       "normal": {
         "value": "{lineHeight.normal}",
@@ -3839,7 +4027,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic line height alias."
       },
       "relaxed": {
         "value": "{lineHeight.relaxed}",
@@ -3849,7 +4038,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic line height alias."
       }
     },
     "letterSpacing": {
@@ -3861,7 +4051,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic letter spacing alias."
       },
       "normal": {
         "value": "{letterSpacing.normal}",
@@ -3871,7 +4062,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic letter spacing alias."
       },
       "wide": {
         "value": "{letterSpacing.wide}",
@@ -3881,7 +4073,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Semantic letter spacing alias."
       }
     }
   },
@@ -3895,7 +4088,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "ringWidth": {
         "value": "{borderWidth.2}",
@@ -3905,7 +4099,8 @@
             "WIDTH_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "ringOffset": {
         "value": "{borderWidth.2}",
@@ -3915,7 +4110,8 @@
             "STROKE_FLOAT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       }
     },
     "fontFamily": {
@@ -3926,7 +4122,8 @@
           "FONT_FAMILY"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "borderWidth": {
       "value": "{borderWidth.default}",
@@ -3936,7 +4133,8 @@
           "WIDTH_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "size": {
       "sm": {
@@ -3983,7 +4181,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "gap": {
           "value": "{spacing.xs}",
@@ -4005,7 +4204,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "iconSize": {
           "value": "{spacing.4}",
@@ -4015,7 +4215,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         }
       },
       "md": {
@@ -4062,7 +4263,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "gap": {
           "value": "{spacing.sm}",
@@ -4084,7 +4286,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "iconSize": {
           "value": "{spacing.5}",
@@ -4094,7 +4297,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         }
       },
       "lg": {
@@ -4141,7 +4345,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "gap": {
           "value": "{spacing.sm}",
@@ -4163,7 +4368,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "iconSize": {
           "value": "{spacing.6}",
@@ -4173,7 +4379,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         }
       }
     },
@@ -4185,7 +4392,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "fontWeight": {
       "value": "{fontWeight.semibold}",
@@ -4197,7 +4405,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "lg": {
       "fontFamily": {
@@ -4208,7 +4417,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{button.size.lg.fontSize}",
@@ -4218,7 +4428,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{button.fontWeight}",
@@ -4228,7 +4439,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{button.size.lg.lineHeight}",
@@ -4238,7 +4450,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "md": {
@@ -4250,7 +4463,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{button.size.md.fontSize}",
@@ -4260,7 +4474,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{button.fontWeight}",
@@ -4270,7 +4485,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{button.size.md.lineHeight}",
@@ -4280,7 +4496,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "sm": {
@@ -4292,7 +4509,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{button.size.sm.fontSize}",
@@ -4302,7 +4520,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{button.fontWeight}",
@@ -4312,7 +4531,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{button.size.sm.lineHeight}",
@@ -4322,7 +4542,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "primary": {
@@ -4335,7 +4556,8 @@
             "SHAPE_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level component token. Resolves through semantic to core palette."
       },
       "text": {
         "value": "{color.action.primary.text.default}",
@@ -4345,7 +4567,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Theme-level component token. Resolves through semantic to core palette."
       }
     },
     "borderRadius": {
@@ -4356,7 +4579,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Theme-level dimension token. Resolves through component/core scale."
     }
   },
   "input": {
@@ -4370,7 +4594,8 @@
             "SHAPE_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "disabled": {
         "value": "{color.bg.disabled}",
@@ -4381,7 +4606,8 @@
             "SHAPE_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       }
     },
     "text": {
@@ -4393,7 +4619,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "placeholder": {
         "value": "{color.text.tertiary}",
@@ -4403,7 +4630,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "disabled": {
         "value": "{color.text.disabled}",
@@ -4413,7 +4641,8 @@
             "TEXT_FILL"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       }
     },
     "border": {
@@ -4425,7 +4654,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "hover": {
         "value": "{color.border.strong}",
@@ -4435,7 +4665,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "focus": {
         "value": "{color.border.focus}",
@@ -4445,7 +4676,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "error": {
         "value": "{color.danger.500}",
@@ -4455,7 +4687,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "disabled": {
         "value": "{color.border.disabled}",
@@ -4465,7 +4698,8 @@
             "STROKE_COLOR"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       }
     },
     "size": {
@@ -4479,7 +4713,8 @@
               "GAP"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "paddingY": {
           "value": "{spacing.xs}",
@@ -4490,7 +4725,8 @@
               "GAP"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "fontSize": {
           "value": "{fontSize.sm}",
@@ -4500,7 +4736,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "minHeight": {
           "value": "{spacing.8}",
@@ -4510,7 +4747,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         }
       },
       "md": {
@@ -4523,7 +4761,8 @@
               "GAP"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "paddingY": {
           "value": "{spacing.sm}",
@@ -4534,7 +4773,8 @@
               "GAP"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "fontSize": {
           "value": "{fontSize.md}",
@@ -4544,7 +4784,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "minHeight": {
           "value": "{spacing.10}",
@@ -4554,7 +4795,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         }
       },
       "lg": {
@@ -4567,7 +4809,8 @@
               "GAP"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "paddingY": {
           "value": "{spacing.sm}",
@@ -4578,7 +4821,8 @@
               "GAP"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "fontSize": {
           "value": "{fontSize.lg}",
@@ -4588,7 +4832,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         },
         "minHeight": {
           "value": "{spacing.12}",
@@ -4598,7 +4843,8 @@
               "WIDTH_HEIGHT"
             ],
             "com.figma.hiddenFromPublishing": false
-          }
+          },
+          "description": "Component-level design token. Resolves from semantic or core layer."
         }
       }
     },
@@ -4610,7 +4856,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "borderWidth": {
       "value": "{borderWidth.default}",
@@ -4620,7 +4867,8 @@
           "WIDTH_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     }
   },
   "card": {
@@ -4635,7 +4883,8 @@
           "STROKE_COLOR"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "border": {
       "value": "{color.border.default}",
@@ -4648,7 +4897,8 @@
           "STROKE_COLOR"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "padding": {
       "sm": {
@@ -4660,7 +4910,8 @@
             "GAP"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "md": {
         "value": "{spacing.lg}",
@@ -4671,7 +4922,8 @@
             "GAP"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "lg": {
         "value": "{spacing.xl}",
@@ -4682,7 +4934,8 @@
             "GAP"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "value": "{spacing.4}",
       "type": "number",
@@ -4692,7 +4945,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Theme-level dimension token. Resolves through component/core scale."
     },
     "radius": {
       "value": "{radius.md}",
@@ -4702,7 +4956,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "spacing": {
       "sm": {
@@ -4714,7 +4969,8 @@
             "GAP"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "md": {
         "value": "{spacing.md}",
@@ -4725,7 +4981,8 @@
             "GAP"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       },
       "lg": {
         "value": "{spacing.lg}",
@@ -4736,7 +4993,8 @@
             "GAP"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Component-level design token. Resolves from semantic or core layer."
       }
     },
     "background": {
@@ -4748,7 +5006,8 @@
           "SHAPE_FILL"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Theme-level component token. Resolves through semantic to core palette."
     },
     "borderRadius": {
       "value": "{radius.8}",
@@ -4758,7 +5017,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Theme-level dimension token. Resolves through component/core scale."
     }
   },
   "badge": {
@@ -4771,7 +5031,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "paddingY": {
       "value": "{spacing.xs}",
@@ -4782,7 +5043,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "fontSize": {
       "value": "{fontSize.xs}",
@@ -4792,7 +5054,8 @@
           "WIDTH_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "fontWeight": {
       "value": "{fontWeight.medium}",
@@ -4804,7 +5067,8 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     },
     "radius": {
       "value": "{radius.full}",
@@ -4814,7 +5078,8 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      }
+      },
+      "description": "Component-level design token. Resolves from semantic or core layer."
     }
   },
   "heading": {
@@ -4827,7 +5092,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.4xl}",
@@ -4837,7 +5103,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.bold}",
@@ -4847,7 +5114,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.tight}",
@@ -4857,7 +5125,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "letterSpacing": {
         "value": "{font.letterSpacing.tight}",
@@ -4867,7 +5136,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "h2": {
@@ -4879,7 +5149,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.3xl}",
@@ -4889,7 +5160,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.bold}",
@@ -4899,7 +5171,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.tight}",
@@ -4909,7 +5182,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "letterSpacing": {
         "value": "{font.letterSpacing.tight}",
@@ -4919,7 +5193,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "h3": {
@@ -4931,7 +5206,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.2xl}",
@@ -4941,7 +5217,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.semibold}",
@@ -4951,7 +5228,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.tight}",
@@ -4961,7 +5239,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "letterSpacing": {
         "value": "{font.letterSpacing.normal}",
@@ -4971,7 +5250,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "h4": {
@@ -4983,7 +5263,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.xl}",
@@ -4993,7 +5274,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.semibold}",
@@ -5003,7 +5285,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.normal}",
@@ -5013,7 +5296,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "letterSpacing": {
         "value": "{font.letterSpacing.normal}",
@@ -5023,7 +5307,8 @@
             "LETTER_SPACING"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     }
   },
@@ -5037,7 +5322,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.lg}",
@@ -5047,7 +5333,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.regular}",
@@ -5057,7 +5344,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.relaxed}",
@@ -5067,7 +5355,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "md": {
@@ -5079,7 +5368,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.md}",
@@ -5089,7 +5379,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.regular}",
@@ -5099,7 +5390,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.normal}",
@@ -5109,7 +5401,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "sm": {
@@ -5121,7 +5414,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.sm}",
@@ -5131,7 +5425,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.regular}",
@@ -5141,7 +5436,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.normal}",
@@ -5151,7 +5447,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     }
   },
@@ -5165,7 +5462,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.md}",
@@ -5175,7 +5473,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.medium}",
@@ -5185,7 +5484,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.normal}",
@@ -5195,7 +5495,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "md": {
@@ -5207,7 +5508,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.sm}",
@@ -5217,7 +5519,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.medium}",
@@ -5227,7 +5530,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.normal}",
@@ -5237,7 +5541,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     },
     "sm": {
@@ -5249,7 +5554,8 @@
             "FONT_FAMILY"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontSize": {
         "value": "{fontSize.xs}",
@@ -5259,7 +5565,8 @@
             "FONT_SIZE"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "fontWeight": {
         "value": "{fontWeight.medium}",
@@ -5269,7 +5576,8 @@
             "FONT_WEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       },
       "lineHeight": {
         "value": "{font.lineHeight.normal}",
@@ -5279,7 +5587,8 @@
             "LINE_HEIGHT"
           ],
           "com.figma.hiddenFromPublishing": false
-        }
+        },
+        "description": "Typography composite token. References core font variables."
       }
     }
   }

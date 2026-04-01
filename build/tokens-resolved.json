@@ -318,7 +318,10 @@
     "2xl": "48px",
     "3xl": "64px",
     "action": {
-      "ghost": {}
+      "ghost": {
+        "paddingX": "0px",
+        "paddingY": "0px"
+      }
     }
   },
   "radius": {
