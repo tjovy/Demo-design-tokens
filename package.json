@@ -1,11 +1,23 @@
 {
-  "name": "@mon-entreprise/design-tokens",
+  "name": "ds-demo-tokens",
   "version": "1.0.0",
+  "description": "Design System DS-Demo — Token pipeline (sanitize → Style Dictionary → CSS/SCSS/JS)",
+  "private": true,
   "scripts": {
-    "build": "node scripts/prepare-source.js && token-transformer tokens-build-source.json tokens-fixed.json && node scripts/sanitize.js && style-dictionary build --config config.js && rm -f tokens-build-source.json"
+    "sanitize":        "node scripts/sanitize.js",
+    "build:tokens":    "node config.js",
+    "build":           "npm run sanitize && npm run build:tokens",
+    "clean":           "rm -rf build/",
+    "rebuild":         "npm run clean && npm run build",
+    "validate":        "node scripts/validate.js",
+    "prepare-source":  "node scripts/prepare-source.js",
+    "prebuild-storybook": "npm run build",
+    "prestorybook":    "npm run build"
   },
   "devDependencies": {
-    "style-dictionary": "^3.0.0",
-    "token-transformer": "^0.0.33"
+    "style-dictionary": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

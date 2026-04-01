@@ -1,85 +1,493 @@
 /**
- * sanitize.js - Le Nettoyeur Universel DesignOps
- * ------------------------------------------------
- * Scanne profondément le JSON pour éliminer :
- * 1. Les métadonnées inutiles de Figma Tokens
- * 2. Les liens morts (alias non résolus contenant '{' et '}')
- * 3. Les dossiers/groupes devenus vides après le nettoyage
+ * sanitize.js
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Nettoie et normalise le tokens.json brut exporté par Token Studio / Figma
+ * avant que Style Dictionary ne le consomme.
+ *
+ * Problèmes traités :
+ *  1. Doublons de sets (core/core, semantic/semantic…)  → dédoublonnage par flatten
+ *  2. Opacité en échelle 0–100                          → normalise en 0–1
+ *  3. Tokens FLOAT sans unité (spacing, fontSize…)      → ajoute "px" en valeur string
+ *  4. Tokens parasites ou mal nommés ("Nombre", etc.)   → suppression par liste noire
+ *  5. Tokens ghost padding sous préfixe color/          → déplace sous spacing/
+ *  6. Génération CSS erronée sur paddingX/Y ghost       → corrige le type à "spacing"
+ *  7. Nommage de sets (core/core → core)                → normalise les clés racines
+ * ─────────────────────────────────────────────────────────────────────────────
  */
 
-const fs = require('fs');
+'use strict';
 
-// Vérifie si un objet est un "Design Token" (il possède une clé value ou $value)
-function isToken(obj) {
-  return obj && typeof obj === 'object' && ('value' in obj || '$value' in obj);
+const fs   = require('fs');
+const path = require('path');
+
+// ─── Chemins ────────────────────────────────────────────────────────────────
+const INPUT  = path.resolve(__dirname, '../tokens.json');
+const OUTPUT = path.resolve(__dirname, '../tokens.sanitized.json');
+
+// ─── Config ──────────────────────────────────────────────────────────────────
+
+/** Tokens à supprimer (chemin pointé depuis la racine du set) */
+const BLACKLIST_PATHS = [
+  'semantic.Nombre',
+  'semantic/semantic.Nombre',
+  'semantic.color.action.ghost.padding.paddingX',
+  'semantic.color.action.ghost.padding.paddingY',
+];
+
+/**
+ * Map de déduplication de sets.
+ * Si un set "X/X" et "X" coexistent, on garde "X" et on merge "X/X" dedans.
+ * Les clés sont les noms de sets à renommer → leur équivalent canonique.
+ */
+const SET_ALIASES = {
+  'core/core'           : 'core',
+  'semantic/semantic'   : 'semantic',
+  'semantic/Light'      : 'semantic',   // sera intégré comme mode Light
+  'semantic/Dark'       : 'semantic',   // sera intégré comme mode Dark
+  'component/component' : 'component',
+  'typography/typography': 'typography',
+  'theme/theme'         : 'theme',
+};
+
+/** Catégories FLOAT auxquelles on ajoute "px" comme unité dans la valeur exportée */
+const PX_CATEGORIES = ['spacing', 'radius', 'borderWidth', 'fontSize', 'letterSpacing'];
+
+/** Catégories FLOAT qui restent unitless (ratios, multipliers) */
+const UNITLESS_CATEGORIES = ['opacity', 'fontWeight', 'lineHeight', 'fontFamily'];
+const LEGACY_REFERENCE_ALIASES = [
+  ['{font.size.', '{fontSize.'],
+  ['{font.weight.', '{fontWeight.'],
+  ['{colors.gray.', '{color.neutral.'],
+  ['{colors.indigo.', '{color.blue.'],
+  ['{borderRadius.', '{radius.'],
+  ['{dimension.', '{spacing.'],
+  ['{colors.', '{color.'],
+];
+
+// ─── Helpers ────────────────────────────────────────────────────────────────
+
+/**
+ * Deep-merge src dans dest (sans écraser les terminaux existants).
+ */
+function deepMerge(dest, src) {
+  for (const key of Object.keys(src)) {
+    if (
+      dest[key] !== undefined &&
+      typeof dest[key] === 'object' &&
+      !('value' in dest[key]) &&
+      !('$value' in dest[key])
+    ) {
+      deepMerge(dest[key], src[key]);
+    } else if (dest[key] === undefined) {
+      dest[key] = src[key];
+    }
+    // Si le token existe déjà dans dest, on ne l'écrase pas (priorité au set canonique)
+  }
 }
 
-// Fonction récursive qui nettoie l'arbre depuis les feuilles jusqu'à la racine
-function sanitizeTokens(obj) {
-  if (typeof obj !== 'object' || obj === null) return false;
+/**
+ * Normalise les valeurs d'opacité d'une échelle 0–100 vers 0–1.
+ * Détecte si une valeur numérique > 1 → divise par 100.
+ */
+function normalizeOpacity(obj, path = '') {
+  if (typeof obj !== 'object' || obj === null) return;
 
-  let isEmpty = true;
+  for (const key of Object.keys(obj)) {
+    const child = obj[key];
 
-  for (const key in obj) {
-    // 1. Élimination des métadonnées Figma Studio
-    if (key === '$themes' || key === '$metadata') {
-      delete obj[key];
+    if (typeof child === 'object' && ('value' in child || '$value' in child)) {
+      const valKey = '$value' in child ? '$value' : 'value';
+      const val    = child[valKey];
+      const isOpacityPath = path.includes('opacity') || key.includes('opacity');
+
+      if (isOpacityPath && typeof val === 'number' && val > 1) {
+        child[valKey] = parseFloat((val / 100).toFixed(4));
+        child._sanitized = 'opacity-normalized';
+      }
+    } else {
+      normalizeOpacity(child, `${path}.${key}`);
+    }
+  }
+}
+
+/**
+ * Ajoute l'unité "px" aux tokens FLOAT numériques des catégories concernées.
+ * Exemple : { value: 16, type: "spacing" } → { value: "16px", type: "spacing" }
+ */
+function addUnits(obj, parentKey = '') {
+  if (typeof obj !== 'object' || obj === null) return;
+
+  for (const key of Object.keys(obj)) {
+    const child = obj[key];
+
+    if (typeof child === 'object' && ('value' in child || '$value' in child)) {
+      const valKey  = '$value' in child ? '$value' : 'value';
+      const typeKey = '$type' in child ? '$type' : 'type';
+      const val     = child[valKey];
+      const type    = child[typeKey] || '';
+
+      const isNumeric    = typeof val === 'number';
+      const needsUnit    = PX_CATEGORIES.some(cat =>
+        parentKey.includes(cat) || type.includes(cat) || key === cat
+      );
+      const isUnitless   = UNITLESS_CATEGORIES.some(cat =>
+        parentKey.includes(cat) || type.includes(cat)
+      );
+      const alreadyHasUnit = typeof val === 'string' && /[a-z%]+$/i.test(val);
+
+      if (isNumeric && needsUnit && !isUnitless && !alreadyHasUnit) {
+        child[valKey] = `${val}px`;
+        child._sanitized = 'unit-added';
+      }
+    } else {
+      addUnits(child, `${parentKey}.${key}`);
+    }
+  }
+}
+
+/**
+ * Supprime les tokens listés dans BLACKLIST_PATHS.
+ * Le chemin est de la forme "setName.path.to.token".
+ */
+function removeBlacklisted(tokens) {
+  for (const dotPath of BLACKLIST_PATHS) {
+    const parts  = dotPath.split('.');
+    const setKey = parts[0];
+    const rest   = parts.slice(1);
+
+    if (!tokens[setKey]) continue;
+
+    let cursor = tokens[setKey];
+    for (let i = 0; i < rest.length - 1; i++) {
+      if (!cursor[rest[i]]) { cursor = null; break; }
+      cursor = cursor[rest[i]];
+    }
+
+    if (cursor && rest.length > 0) {
+      const lastKey = rest[rest.length - 1];
+      if (cursor[lastKey] !== undefined) {
+        delete cursor[lastKey];
+        console.log(`  🗑  Supprimé token blacklisté : ${dotPath}`);
+      }
+    }
+  }
+}
+
+/**
+ * Corrige le préfixe "color/" sur des tokens de type spacing dans semantic.
+ * color.action.ghost.padding.* → spacing.action.ghost.*
+ */
+function fixMisplacedSpacingTokens(semanticSet) {
+  if (!semanticSet?.color?.action?.ghost?.padding) return;
+
+  const ghostPadding = semanticSet.color.action.ghost.padding;
+  const paddingX     = ghostPadding.paddingX;
+  const paddingY     = ghostPadding.paddingY;
+
+  if (!semanticSet.spacing) semanticSet.spacing = {};
+  if (!semanticSet.spacing.action) semanticSet.spacing.action = {};
+  if (!semanticSet.spacing.action.ghost) semanticSet.spacing.action.ghost = {};
+
+  if (paddingX) {
+    semanticSet.spacing.action.ghost.paddingX = {
+      ...paddingX,
+      type: 'spacing',
+      _sanitized: 'moved-from-color',
+    };
+  }
+  if (paddingY) {
+    semanticSet.spacing.action.ghost.paddingY = {
+      ...paddingY,
+      type: 'spacing',
+      _sanitized: 'moved-from-color',
+    };
+  }
+
+  // Nettoyer l'ancienne entrée
+  delete semanticSet.color.action.ghost.padding;
+
+  // Nettoyer si action/ghost vide
+  if (Object.keys(semanticSet.color.action.ghost).length === 0) {
+    delete semanticSet.color.action.ghost;
+  }
+
+  console.log('  🔧 Ghost padding déplacé de color/ → spacing/');
+}
+
+/**
+ * Supprime les blocs legacy non compatibles avec le schéma réellement exporté.
+ */
+function removeLegacyThemeTokens(themeSet) {
+  if (!themeSet || typeof themeSet !== 'object') return;
+
+  if (themeSet.typography) {
+    delete themeSet.typography;
+    console.log('  🗑  Supprimé bloc legacy : theme.typography');
+  }
+}
+
+/**
+ * Supprime les alias plats qui entrent en collision après transformation des noms.
+ */
+function removeCollidingFontAliases(tokens) {
+  if (tokens.font?.size) {
+    delete tokens.font.size;
+    console.log('  🗑  Supprimé alias collisionnel : font.size');
+  }
+
+  if (tokens.font?.weight) {
+    delete tokens.font.weight;
+    console.log('  🗑  Supprimé alias collisionnel : font.weight');
+  }
+}
+
+/**
+ * Corrige certains noms de palettes hérités avec une casse incohérente.
+ */
+function normalizeTopLevelPaletteNames(tokens) {
+  if (tokens.Blue && !tokens.blue) {
+    tokens.blue = tokens.Blue;
+    delete tokens.Blue;
+    console.log('  🔤 Palette renommée : Blue → blue');
+  }
+}
+
+/**
+ * Normalise les clés de sets selon SET_ALIASES.
+ * Merge les sets "X/X" dans leur équivalent canonique "X".
+ * Ignore les sets Light/Dark qui sont des modes (pas des sets à fusionner).
+ */
+function normalizeSets(tokens) {
+  const result = {};
+  const modesLightDark = {};
+
+  // Première passe : identifier les sets canoniques
+  for (const [setName, setContent] of Object.entries(tokens)) {
+    if (setName === '$metadata') {
+      result.$metadata = setContent;
       continue;
     }
 
-    const child = obj[key];
+    const canonical = SET_ALIASES[setName] ?? setName;
 
-    if (isToken(child)) {
-      // 2. Détection des tokens
-      const val = child.value !== undefined ? child.value : child.$value;
-      
-      // On convertit la valeur en texte (utile si c'est un tableau complexe d'ombres)
-      const valStr = typeof val === 'object' ? JSON.stringify(val) : String(val);
+    // Light / Dark → stocker séparément pour traitement de modes
+    if (setName === 'semantic/Light' || setName === 'semantic/Dark') {
+      const modeKey = setName.split('/')[1]; // 'Light' ou 'Dark'
+      modesLightDark[modeKey] = setContent;
+      console.log(`  📦 Set mode détecté : ${setName} → ignoré (géré comme mode sémantique)`);
+      continue;
+    }
 
-      // Si la valeur contient encore des accolades, c'est un lien mort !
-      if (valStr.includes('{') && valStr.includes('}')) {
-        console.log(`🧹 Suppression du token mort : "${key}" (Raison: Alias introuvable)`);
-        delete obj[key];
-      } else {
-        isEmpty = false; // Le token est sain, le dossier n'est donc pas vide
-      }
-    } else if (typeof child === 'object' && !Array.isArray(child)) {
-      // 3. C'est un sous-dossier, on plonge dedans (Récursivité)
-      const childIsEmpty = sanitizeTokens(child);
-      
-      // 4. Nettoyage des dossiers fantômes
-      if (childIsEmpty) {
-        delete obj[key]; // Si le sous-dossier est vide, on le supprime
-      } else {
-        isEmpty = false;
-      }
+    if (!result[canonical]) {
+      result[canonical] = {};
+    }
+
+    // Merge (le set canonique a priorité sur le set dupliqué)
+    if (setName !== canonical) {
+      console.log(`  🔀 Merge ${setName} → ${canonical}`);
+      deepMerge(result[canonical], setContent);
     } else {
-      // Autres types de données (tableaux purs, etc.)
-      isEmpty = false;
+      deepMerge(result[canonical], setContent);
     }
   }
 
-  // Retourne 'true' si le dossier actuel ne contient plus aucun token valide
-  return isEmpty; 
-}
-
-// ── EXÉCUTION ──
-const filePath = 'tokens-fixed.json';
-
-try {
-  if (fs.existsSync(filePath)) {
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    
-    console.log('🔍 Début de l\'audit universel du JSON...');
-    sanitizeTokens(data);
-    
-    // On réécrit le fichier propre pour Style Dictionary
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-    console.log('✅ Nettoyage terminé : Le JSON est purifié et prêt à être compilé.');
-  } else {
-    console.warn(`⚠️ Fichier introuvable : ${filePath}. Avez-vous lancé token-transformer ?`);
+  // Log des modes non réintégrés
+  if (Object.keys(modesLightDark).length > 0) {
+    console.log(`  ℹ️  Modes Light/Dark détectés — à gérer via Style Dictionary multi-themes`);
+    // On les stocke dans metadata pour traçabilité
+    if (!result.$metadata) result.$metadata = {};
+    result.$metadata._modes = modesLightDark;
   }
-} catch (err) {
-  console.error('❌ Erreur critique lors du nettoyage :', err);
-  process.exit(1); // Fait échouer GitHub Actions en cas de vrai bug script
+
+  return result;
 }
+
+/**
+ * Nettoie les flags internes _sanitized avant l'écriture finale.
+ */
+function cleanSanitizationFlags(obj) {
+  if (typeof obj !== 'object' || obj === null) return;
+  delete obj._sanitized;
+  for (const val of Object.values(obj)) {
+    cleanSanitizationFlags(val);
+  }
+}
+
+/**
+ * Réécrit les références legacy qui ne correspondent plus aux chemins présents
+ * après normalisation/aplatissement des sets.
+ */
+function rewriteLegacyReferences(obj) {
+  if (typeof obj !== 'object' || obj === null) return;
+
+  for (const val of Object.values(obj)) {
+    if (typeof val !== 'object' || val === null) continue;
+
+    for (const key of ['value', '$value']) {
+      if (typeof val[key] !== 'string') continue;
+
+      let nextValue = val[key];
+      for (const [from, to] of LEGACY_REFERENCE_ALIASES) {
+        nextValue = nextValue.replaceAll(from, to);
+      }
+      val[key] = nextValue;
+    }
+
+    rewriteLegacyReferences(val);
+  }
+}
+
+/**
+ * Reconstruit le $metadata.tokenSetOrder avec les noms de sets canoniques.
+ */
+function rebuildTokenSetOrder(tokens) {
+  if (!tokens.$metadata?.tokenSetOrder) return;
+
+  const seen  = new Set();
+  const order = [];
+
+  for (const setName of tokens.$metadata.tokenSetOrder) {
+    const canonical = SET_ALIASES[setName] ?? setName;
+
+    // Ignorer Light/Dark ici (modes)
+    if (setName === 'semantic/Light' || setName === 'semantic/Dark') continue;
+
+    if (!seen.has(canonical)) {
+      seen.add(canonical);
+      order.push(canonical);
+    }
+  }
+
+  tokens.$metadata.tokenSetOrder = order;
+  console.log(`  📋 tokenSetOrder normalisé : [${order.join(', ')}]`);
+}
+
+/**
+ * Aplatit les sets en supprimant le préfixe de set (core, semantic, component…).
+ *
+ * Pourquoi : Token Studio génère des alias de la forme {color.white} (sans préfixe de set).
+ * Si le JSON garde la structure { core: { color: { white: {...} } } }, Style Dictionary
+ * cherche "color.white" à la racine et échoue. L'aplatissement réalise ce que
+ * `token-transformer` faisait : merge de tous les sets dans un objet racine unique.
+ *
+ * Ordre de merge : core < semantic < component < typography < theme
+ * (les sets plus "hauts" dans la chaîne sémantique ont priorité).
+ * Les sets de modes (light, dark, light/light, dark/dark) et $themes/$metadata
+ * sont exclus du merge principal.
+ */
+function flattenSets(tokens) {
+  /** Sets à exclure du merge racine (modes et metadata) */
+  const EXCLUDE = new Set(['$metadata', '$themes', 'light', 'light/light', 'dark', 'dark/dark']);
+
+  /**
+   * Ordre de priorité pour le merge (dernier = gagne en cas de collision).
+   * Les sets listés ici sont mergés dans cet ordre.
+   * Les sets non listés sont mergés en premier (ordre naturel).
+   */
+  const MERGE_ORDER = ['core', 'semantic', 'component', 'typography', 'theme'];
+
+  const result = {};
+  const modes  = {};
+
+  // Collecter les sets de modes séparément
+  for (const [setName, setContent] of Object.entries(tokens)) {
+    if (setName === 'light' || setName === 'light/light') {
+      deepMerge(modes, { light: setContent });
+    } else if (setName === 'dark' || setName === 'dark/dark') {
+      deepMerge(modes, { dark: setContent });
+    }
+  }
+
+  // Merge dans l'ordre : d'abord les sets non listés dans MERGE_ORDER, puis dans l'ordre
+  const unlisted = Object.keys(tokens).filter(
+    k => !EXCLUDE.has(k) && !MERGE_ORDER.includes(k)
+  );
+
+  for (const setName of [...unlisted, ...MERGE_ORDER]) {
+    if (EXCLUDE.has(setName) || !tokens[setName]) continue;
+    const setContent = tokens[setName];
+    if (typeof setContent !== 'object') continue;
+
+    // Expose le thème par défaut à la racine pour les aliases {bg.*}, {accent.*}, etc.
+    if (setName === 'theme' && modes.light) {
+      deepMerge(result, modes.light);
+      console.log('  ↳ Injecte le mode par défaut "light" → racine');
+    }
+
+    deepMerge(result, setContent);
+    console.log(`  ↳ Aplati set "${setName}" → racine`);
+  }
+
+  return result;
+}
+
+// ─── Main ────────────────────────────────────────────────────────────────────
+
+function sanitize() {
+  console.log('\n🧹 Sanitisation des tokens.json\n');
+
+  // 1. Lecture
+  if (!fs.existsSync(INPUT)) {
+    console.error(`❌ Fichier source introuvable : ${INPUT}`);
+    process.exit(1);
+  }
+  let tokens;
+  try {
+    tokens = JSON.parse(fs.readFileSync(INPUT, 'utf-8'));
+  } catch (e) {
+    console.error(`❌ Impossible de parser tokens.json : ${e.message}`);
+    process.exit(1);
+  }
+  console.log(`✅ tokens.json lu — ${Object.keys(tokens).length} sets détectés`);
+
+  // 2. Normalisation des sets (déduplication)
+  tokens = normalizeSets(tokens);
+  console.log(`✅ Sets normalisés → ${Object.keys(tokens).filter(k => k !== '$metadata').join(', ')}`);
+
+  // 3. Suppression des tokens blacklistés
+  removeBlacklisted(tokens);
+
+  // 4. Déplacement des tokens spacing mal placés dans semantic
+  if (tokens.semantic) {
+    fixMisplacedSpacingTokens(tokens.semantic);
+  }
+  if (tokens.theme) {
+    removeLegacyThemeTokens(tokens.theme);
+  }
+
+  // 5. Normalisation des opacités (0–100 → 0–1)
+  for (const setContent of Object.values(tokens)) {
+    if (typeof setContent === 'object') normalizeOpacity(setContent);
+  }
+  console.log('✅ Opacités normalisées (échelle 0–1)');
+
+  // 6. Ajout des unités px sur les tokens FLOAT
+  for (const setContent of Object.values(tokens)) {
+    if (typeof setContent === 'object') addUnits(setContent);
+  }
+  console.log('✅ Unités px ajoutées aux tokens dimensionnels');
+
+  // 7. Reconstruction du tokenSetOrder
+  rebuildTokenSetOrder(tokens);
+
+  // 8. Nettoyage des flags internes
+  cleanSanitizationFlags(tokens);
+
+  // 8b. Réécriture des références legacy avant l'aplatissement final
+  rewriteLegacyReferences(tokens);
+
+  // 9. Aplatissement des sets → supprimer les préfixes core/semantic/…
+  //    Nécessaire pour que les alias {color.white} résolvent correctement dans Style Dictionary.
+  console.log('\n🔀 Aplatissement des sets (suppression des préfixes de set) :');
+  const flat = flattenSets(tokens);
+  removeCollidingFontAliases(flat);
+  normalizeTopLevelPaletteNames(flat);
+  console.log(`✅ Aplatissement terminé → ${Object.keys(flat).filter(k => !k.startsWith('$')).length} groupes racines`);
+
+  // 10. Écriture
+  fs.writeFileSync(OUTPUT, JSON.stringify(flat, null, 2), 'utf-8');
+  console.log(`\n✅ tokens.sanitized.json écrit → ${OUTPUT}`);
+  console.log('   Prêt pour Style Dictionary.\n');
+}
+
+sanitize();
