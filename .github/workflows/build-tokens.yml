@@ -1,42 +1,175 @@
 name: 🔨 Build Design Tokens
 
+# ─── Déclencheurs ───────────────────────────────────────────────────────────
 on:
   push:
     branches:
       - main
     paths:
-      - 'tokens.json'
+      - 'tokens.json'         # Source Figma / Token Studio
+      - 'tokens-docs.json'    # Documentation IA (n8n)
       - 'package.json'
       - 'config.js'
-      - 'scripts/prepare-source.js'
       - 'scripts/sanitize.js'
+      - 'scripts/validate.js'
+      - 'scripts/prepare-source.js'
 
+  # Permet de déclencher manuellement depuis l'UI GitHub
+  workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: 'Forcer la reconstruction même sans changement détecté'
+        required: false
+        default: false
+        type: boolean
+
+# ─── Permissions ──────────────────────────────────────────────────────────────
+permissions:
+  contents: write   # Nécessaire pour git push du CSS généré
+
+# ─── Concurrence : annuler les runs en doublon sur la même branche ───────────
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# ─── Job ──────────────────────────────────────────────────────────────────────
 jobs:
   build:
+    name: Sanitize → Validate → Build → Publish
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # Donne au robot le droit de pousser du code
+    timeout-minutes: 10
 
     steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Historique complet pour diff et git log
 
-      - name: ⚙️ Setup Node.js
+      # ── 2. Node.js ───────────────────────────────────────────────────────────
+      - name: ⚙️ Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'          # Cache npm pour les runs suivants
 
+      # ── 3. Dépendances ───────────────────────────────────────────────────────
       - name: 📦 Install dependencies
-        run: npm install
+        run: npm ci              # ci = install déterministe depuis package-lock.json
 
-      - name: 🏭 Build tokens (Transform & Style Dictionary)
-        run: npm run build
+      # ── 4. Pré-traitement optionnel ──────────────────────────────────────────
+      - name: 🛠️ Prepare source (pre-processing)
+        if: hashFiles('scripts/prepare-source.js') != ''
+        run: npm run prepare-source
+        # Ce script est optionnel — skippé s'il n'existe pas
 
-      - name: 💾 Commit & Push du nouveau CSS
+      # ── 5. Sanitisation ───────────────────────────────────────────────────────
+      - name: 🧹 Sanitize tokens.json
+        run: npm run sanitize
+        # Produit tokens.sanitized.json
+        # Corrige : doublons de sets, opacité, unités px, tokens parasites
+
+      # ── 6. Validation ─────────────────────────────────────────────────────────
+      - name: 🔍 Validate tokens.sanitized.json
+        run: npm run validate
+        # Exit 1 si erreurs bloquantes → stoppe le pipeline proprement
+        # Les warnings sont loggés mais ne bloquent pas
+
+      # ── 7. Build Style Dictionary ─────────────────────────────────────────────
+      - name: 🏭 Build tokens (Style Dictionary)
+        run: npm run build:tokens
+        # Génère :
+        #   build/css/variables.css
+        #   build/css/variables.dark.css
+        #   build/scss/_variables.scss
+        #   build/js/tokens.js
+        #   build/ts/tokens.d.ts
+        #   build/tokens-resolved.json
+
+      # ── 8. Vérification que le CSS est non-vide ───────────────────────────────
+      - name: 🩺 Sanity check — CSS non vide
         run: |
-          git config --global user.name "github-actions[bot]"
+          if [ ! -s build/css/variables.css ]; then
+            echo "❌ build/css/variables.css est vide ou absent"
+            exit 1
+          fi
+          echo "✅ variables.css généré — $(wc -l < build/css/variables.css) lignes"
+          # Vérification rapide : pas de valeurs hex là où on attend des px
+          if grep -E 'spacing.*: #[0-9a-fA-F]{6}' build/css/variables.css; then
+            echo "❌ Valeurs hex détectées dans des tokens de spacing — problème de type"
+            exit 1
+          fi
+          if grep -E 'opacity.*: [1-9][0-9]+' build/css/variables.css; then
+            echo "❌ Opacité > 1 détectée — normalisation manquante"
+            exit 1
+          fi
+          echo "✅ Sanity checks passés"
+
+      # ── 9. Upload des artefacts (toujours, même si commit skippé) ─────────────
+      - name: 📤 Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: design-tokens-${{ github.sha }}
+          path: |
+            build/css/variables.css
+            build/css/variables.dark.css
+            build/scss/_variables.scss
+            build/js/tokens.js
+            build/tokens-resolved.json
+            tokens.sanitized.json
+          retention-days: 30
+
+      # ── 10. Commit & Push ─────────────────────────────────────────────────────
+      - name: 💾 Commit & Push des tokens buildés
+        run: |
+          git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Ajouter tous les fichiers générés
           git add build/css/variables.css
-          # S'il y a des changements, on commit, sinon on continue sans erreur
-          git commit -m "🤖 auto: regénération du variables.css depuis tokens.json" || echo "Aucun changement détecté dans le CSS."
-          git push
+          git add build/css/variables.dark.css || true   # Optionnel selon le contenu
+          git add build/scss/_variables.scss
+          git add build/js/tokens.js
+          git add build/ts/tokens.d.ts         || true
+          git add build/tokens-resolved.json
+          git add tokens.sanitized.json         || true   # Pour traçabilité
+
+          # Commit uniquement s'il y a des changements
+          if git diff --staged --quiet; then
+            echo "ℹ️  Aucun changement dans les fichiers générés — commit ignoré."
+          else
+            COMMIT_MSG="🤖 chore(tokens): regénération auto depuis tokens.json [skip ci]
+
+          Source : ${{ github.sha }}
+          Déclenché par : ${{ github.actor }}
+          Branch : ${{ github.ref_name }}"
+
+            git commit -m "$COMMIT_MSG"
+            git push
+            echo "✅ Fichiers générés commités et poussés."
+          fi
+
+      # ── 11. Résumé du job ─────────────────────────────────────────────────────
+      - name: 📋 Job summary
+        if: always()
+        run: |
+          echo "## 🔨 Design Tokens Build" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Fichier | Statut |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|--------|" >> $GITHUB_STEP_SUMMARY
+          for f in \
+            "build/css/variables.css" \
+            "build/css/variables.dark.css" \
+            "build/scss/_variables.scss" \
+            "build/js/tokens.js" \
+            "build/tokens-resolved.json"; do
+            if [ -f "$f" ]; then
+              LINES=$(wc -l < "$f")
+              echo "| \`$f\` | ✅ $LINES lignes |" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "| \`$f\` | ⚠️ absent |" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "_Commit source : \`${{ github.sha }}\`_" >> $GITHUB_STEP_SUMMARY
