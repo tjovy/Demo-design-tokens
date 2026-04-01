@@ -35,7 +35,7 @@ concurrency:
 # ─── Job ──────────────────────────────────────────────────────────────────────
 jobs:
   build:
-    name: Sanitize → Validate → Build → Publish
+    name: Sanitize → Validate → Build CSS → Publish
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -76,15 +76,10 @@ jobs:
         # Les warnings sont loggés mais ne bloquent pas
 
       # ── 7. Build Style Dictionary ─────────────────────────────────────────────
-      - name: 🏭 Build tokens (Style Dictionary)
-        run: npm run build:tokens
-        # Génère :
+      - name: 🏭 Build CSS variables
+        run: npm run build:css
+        # Génère uniquement :
         #   build/css/variables.css
-        #   build/css/variables.dark.css
-        #   build/scss/_variables.scss
-        #   build/js/tokens.js
-        #   build/ts/tokens.d.ts
-        #   build/tokens-resolved.json
 
       # ── 8. Vérification que le CSS est non-vide ───────────────────────────────
       - name: 🩺 Sanity check — CSS non vide
@@ -113,11 +108,6 @@ jobs:
           name: design-tokens-${{ github.sha }}
           path: |
             build/css/variables.css
-            build/css/variables.dark.css
-            build/scss/_variables.scss
-            build/js/tokens.js
-            build/tokens-resolved.json
-            tokens.sanitized.json
           retention-days: 30
 
       # ── 10. Commit & Push ─────────────────────────────────────────────────────
@@ -126,14 +116,7 @@ jobs:
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Ajouter tous les fichiers générés
           git add build/css/variables.css
-          git add build/css/variables.dark.css || true   # Optionnel selon le contenu
-          git add build/scss/_variables.scss
-          git add build/js/tokens.js
-          git add build/ts/tokens.d.ts         || true
-          git add build/tokens-resolved.json
-          git add tokens.sanitized.json         || true   # Pour traçabilité
 
           # Commit uniquement s'il y a des changements
           if git diff --staged --quiet; then
@@ -158,12 +141,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Fichier | Statut |" >> $GITHUB_STEP_SUMMARY
           echo "|---------|--------|" >> $GITHUB_STEP_SUMMARY
-          for f in \
-            "build/css/variables.css" \
-            "build/css/variables.dark.css" \
-            "build/scss/_variables.scss" \
-            "build/js/tokens.js" \
-            "build/tokens-resolved.json"; do
+          for f in "build/css/variables.css"; do
             if [ -f "$f" ]; then
               LINES=$(wc -l < "$f")
               echo "| \`$f\` | ✅ $LINES lignes |" >> $GITHUB_STEP_SUMMARY
