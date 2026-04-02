@@ -168,6 +168,8 @@
   --color-action-ghost-icon-disabled: #d1d5db;
   --color-action-ghost-icon-hover: #1f2937;
   --color-action-ghost-icon-active: #030712;
+  --color-action-ghost-padding-padding-x: 0px;
+  --color-action-ghost-padding-padding-y: 0px;
   --color-action-danger-bg-default: #dc2626;
   --color-action-danger-bg-hover: #b91c1c;
   --color-action-danger-bg-active: #991b1b;

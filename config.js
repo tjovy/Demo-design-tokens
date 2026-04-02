@@ -14,50 +14,14 @@
 
 'use strict';
 
-const fs              = require('fs');
 const path            = require('path');
 const { createBuildView } = require('./scripts/build-view');
 
 // ─── Constantes ──────────────────────────────────────────────────────────────
 
 const TOKENS_SOURCE = path.resolve(__dirname, 'tokens.sanitized.json');
-const DOCS_SOURCE   = path.resolve(__dirname, 'tokens-docs.json');
 const BUILD_PATH    = path.resolve(__dirname, 'build');
 const TARGET_PLATFORMS = process.argv.slice(2);
-
-// ─── Helpers docs ────────────────────────────────────────────────────────────
-
-function loadDocs() {
-  try {
-    return JSON.parse(fs.readFileSync(DOCS_SOURCE, 'utf-8'));
-  } catch {
-    console.warn('⚠️  tokens-docs.json introuvable — descriptions vides dans le CSS');
-    return {};
-  }
-}
-
-function injectDescriptions(tokenObj, docObj) {
-  if (!tokenObj || typeof tokenObj !== 'object') return tokenObj;
-
-  for (const key of Object.keys(tokenObj)) {
-    const token = tokenObj[key];
-    const doc   = docObj?.[key];
-
-    if (token && typeof token === 'object') {
-      const isTerminal = 'value' in token || '$value' in token;
-
-      if (isTerminal && doc?.description) {
-        token.description = doc.description;
-        if ('$value' in token) token.$description = doc.description;
-      }
-
-      if (doc && typeof doc === 'object') {
-        injectDescriptions(token, doc);
-      }
-    }
-  }
-  return tokenObj;
-}
 
 // ─── Dimensions : types qui nécessitent une unité px ────────────────────────
 
@@ -83,9 +47,7 @@ async function buildTokens() {
         pattern: /tokens\.sanitized\.json$/,
         parser: ({ contents }) => {
           const tokens = JSON.parse(contents);
-          const docs   = loadDocs();
-          const enriched = injectDescriptions(tokens, docs);
-          return createBuildView(enriched);
+          return createBuildView(tokens);
         },
       },
     },
