@@ -1,656 +1,4 @@
 {
-  "typography": {
-    "heading": {
-      "h1": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.4xl}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.bold}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.tight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "letterSpacing": {
-          "value": "{font.letterSpacing.tight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LETTER_SPACING"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "h2": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.3xl}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.bold}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.tight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "letterSpacing": {
-          "value": "{font.letterSpacing.tight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LETTER_SPACING"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "h3": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.2xl}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.semibold}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.tight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "letterSpacing": {
-          "value": "{font.letterSpacing.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LETTER_SPACING"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "h4": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.xl}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.semibold}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "letterSpacing": {
-          "value": "{font.letterSpacing.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LETTER_SPACING"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      }
-    },
-    "body": {
-      "lg": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.lg}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.regular}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.relaxed}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "md": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.md}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.regular}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "sm": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.sm}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.regular}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      }
-    },
-    "label": {
-      "lg": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.md}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.medium}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "md": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.sm}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.medium}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "sm": {
-        "fontFamily": {
-          "value": "{font.family.default}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{fontSize.xs}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{fontWeight.medium}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{font.lineHeight.normal}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      }
-    },
-    "button": {
-      "lg": {
-        "fontFamily": {
-          "value": "{button.fontFamily}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{button.size.lg.fontSize}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{button.fontWeight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{button.size.lg.lineHeight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "md": {
-        "fontFamily": {
-          "value": "{button.fontFamily}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{button.size.md.fontSize}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{button.fontWeight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{button.size.md.lineHeight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      },
-      "sm": {
-        "fontFamily": {
-          "value": "{button.fontFamily}",
-          "type": "text",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_FAMILY"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontSize": {
-          "value": "{button.size.sm.fontSize}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_SIZE"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "fontWeight": {
-          "value": "{button.fontWeight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "FONT_WEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        },
-        "lineHeight": {
-          "value": "{button.size.sm.lineHeight}",
-          "type": "number",
-          "$extensions": {
-            "com.figma.scopes": [
-              "LINE_HEIGHT"
-            ],
-            "com.figma.hiddenFromPublishing": false
-          },
-          "description": "Typography composite token. References core font variables."
-        }
-      }
-    }
-  },
   "core": {
     "color": {
       "white": {
@@ -5614,62 +4962,6 @@
           "description": "Component-level design token. Resolves from semantic or core layer."
         }
       }
-    },
-    "badge": {
-      "paddingX": {
-        "value": "{spacing.sm}",
-        "type": "number",
-        "$extensions": {
-          "com.figma.scopes": [
-            "WIDTH_HEIGHT",
-            "GAP"
-          ],
-          "com.figma.hiddenFromPublishing": false
-        }
-      },
-      "paddingY": {
-        "value": "{spacing.xs}",
-        "type": "number",
-        "$extensions": {
-          "com.figma.scopes": [
-            "WIDTH_HEIGHT",
-            "GAP"
-          ],
-          "com.figma.hiddenFromPublishing": false
-        }
-      },
-      "fontSize": {
-        "value": "{fontSize.xs}",
-        "type": "number",
-        "$extensions": {
-          "com.figma.scopes": [
-            "WIDTH_HEIGHT"
-          ],
-          "com.figma.hiddenFromPublishing": false
-        }
-      },
-      "fontWeight": {
-        "value": "{fontWeight.medium}",
-        "type": "number",
-        "$extensions": {
-          "com.figma.scopes": [
-            "CORNER_RADIUS",
-            "WIDTH_HEIGHT",
-            "GAP"
-          ],
-          "com.figma.hiddenFromPublishing": false
-        }
-      },
-      "radius": {
-        "value": "{radius.full}",
-        "type": "number",
-        "$extensions": {
-          "com.figma.scopes": [
-            "CORNER_RADIUS"
-          ],
-          "com.figma.hiddenFromPublishing": false
-        }
-      }
     }
   },
   "theme": {
@@ -5760,14 +5052,666 @@
       }
     }
   },
+  "typography": {
+    "heading": {
+      "h1": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.4xl}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.bold}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.tight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "letterSpacing": {
+          "value": "{font.letterSpacing.tight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LETTER_SPACING"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "h2": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.3xl}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.bold}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.tight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "letterSpacing": {
+          "value": "{font.letterSpacing.tight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LETTER_SPACING"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "h3": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.2xl}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.semibold}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.tight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "letterSpacing": {
+          "value": "{font.letterSpacing.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LETTER_SPACING"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "h4": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.xl}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.semibold}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "letterSpacing": {
+          "value": "{font.letterSpacing.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LETTER_SPACING"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      }
+    },
+    "body": {
+      "lg": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.lg}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.regular}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.relaxed}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "md": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.md}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.regular}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "sm": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.sm}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.regular}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      }
+    },
+    "label": {
+      "lg": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.md}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.medium}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "md": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.sm}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.medium}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "sm": {
+        "fontFamily": {
+          "value": "{font.family.default}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{fontSize.xs}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{fontWeight.medium}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{font.lineHeight.normal}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      }
+    },
+    "button": {
+      "lg": {
+        "fontFamily": {
+          "value": "{button.fontFamily}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{button.size.lg.fontSize}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{button.fontWeight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{button.size.lg.lineHeight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "md": {
+        "fontFamily": {
+          "value": "{button.fontFamily}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{button.size.md.fontSize}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{button.fontWeight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{button.size.md.lineHeight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      },
+      "sm": {
+        "fontFamily": {
+          "value": "{button.fontFamily}",
+          "type": "text",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontSize": {
+          "value": "{button.size.sm.fontSize}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "fontWeight": {
+          "value": "{button.fontWeight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "FONT_WEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        },
+        "lineHeight": {
+          "value": "{button.size.sm.lineHeight}",
+          "type": "number",
+          "$extensions": {
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false
+          },
+          "description": "Typography composite token. References core font variables."
+        }
+      }
+    }
+  },
   "$themes": {},
   "$metadata": {
     "tokenSetOrder": [
-      "typography",
       "core",
       "semantic",
       "component",
-      "theme"
+      "theme",
+      "typography"
     ],
     "_modes": {
       "Light": {
@@ -6430,30 +6374,6 @@
                     "com.figma.hiddenFromPublishing": false
                   },
                   "description": "Bouton ghost - texte"
-                }
-              },
-              "padding": {
-                "paddingX": {
-                  "value": "{spacing.none}",
-                  "type": "number",
-                  "$extensions": {
-                    "com.figma.scopes": [
-                      "WIDTH_HEIGHT",
-                      "GAP"
-                    ],
-                    "com.figma.hiddenFromPublishing": false
-                  }
-                },
-                "paddingY": {
-                  "value": "{spacing.none}",
-                  "type": "number",
-                  "$extensions": {
-                    "com.figma.scopes": [
-                      "WIDTH_HEIGHT",
-                      "GAP"
-                    ],
-                    "com.figma.hiddenFromPublishing": false
-                  }
                 }
               }
             },
@@ -8135,30 +8055,6 @@
                     "com.figma.hiddenFromPublishing": false
                   },
                   "description": "Bouton ghost - texte"
-                }
-              },
-              "padding": {
-                "paddingX": {
-                  "value": "{spacing.none}",
-                  "type": "number",
-                  "$extensions": {
-                    "com.figma.scopes": [
-                      "WIDTH_HEIGHT",
-                      "GAP"
-                    ],
-                    "com.figma.hiddenFromPublishing": false
-                  }
-                },
-                "paddingY": {
-                  "value": "{spacing.none}",
-                  "type": "number",
-                  "$extensions": {
-                    "com.figma.scopes": [
-                      "WIDTH_HEIGHT",
-                      "GAP"
-                    ],
-                    "com.figma.hiddenFromPublishing": false
-                  }
                 }
               }
             },
