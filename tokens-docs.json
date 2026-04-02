@@ -1,4 +1,61 @@
 {
-  "component": {},
+  "component": {
+    "button": {
+      "description": "## Description\n\nBouton d'action principal du Design System, disponible en 4 variantes, 3 tailles et 5 états.\n\n## Spec\n\n- **Variantes** : `primary`, `secondary`, `ghost`, `danger`\n- **Tailles** : `sm` (padding 4px 16px, font 14px), `md` (padding 8px 16px, font 16px), `lg` (padding 8px 24px, font 18px)\n- **États** : `default`, `hover`, `active`, `focus`, `disabled` — focus ring issu des tokens `--button-focus-ring-*` (pas de variante Figma explicite pour focus)\n- **Rayon** : `var(--button-radius, 8px)` uniforme sur toutes les tailles et variantes\n- **Icônes** : optionnelles gauche/droite, `12px × 12px`, gap piloté par `--button-size-{size}-gap`\n- **Accessibilité** : élément `<button>` natif, `disabled` attribut natif, focus visible préservé\n\n## Do & Don't\n\n**Do**\n- Utiliser `primary` pour l'action dominante d'une zone.\n- Spécifier explicitement `type=\"button\"`, `type=\"submit\"` ou `type=\"reset\"`.\n- Utiliser `disabled` natif pour l'état désactivé.\n\n**Don't**\n- Ne pas utiliser un `<button>` pour la navigation : préférer un `<a>` dans ce cas.\n- Ne pas inventer de variantes hors `primary`, `secondary`, `ghost`, `danger`.\n\n## Code interactif (Live Editor)\n\n```jsx\nconst VARIANTS = ['primary', 'secondary', 'ghost', 'danger'];\nconst SIZES = ['sm', 'md', 'lg'];\nconst STATES = ['default', 'hover', 'active', 'focus', 'disabled'];\n\nconst colorVar = (variant, part, state, fallback) =>\n  `var(--color-action-${variant}-${part}-${state}, ${fallback})`;\n\nconst sizeVar = (size, part, fallback) =>\n  `var(--button-size-${size}-${part}, ${fallback})`;\n\nconst SIZE_FALLBACKS = {\n  sm: { paddingX: '16px', paddingY: '4px', fontSize: '14px', lineHeight: '17px', gap: '4px', minHeight: '25px' },\n  md: { paddingX: '16px', paddingY: '8px', fontSize: '16px', lineHeight: '19px', gap: '8px', minHeight: '35px' },\n  lg: { paddingX: '24px', paddingY: '8px', fontSize: '18px', lineHeight: '22px', gap: '8px', minHeight: '38px' },\n};\n\nconst COLOR_FALLBACKS = {\n  primary:   { bg: { default:'#368e35', hover:'#1D4ED8', active:'#1E40AF', focus:'#368e35', disabled:'#F3F4F6' }, text: { default:'#FFFFFF', hover:'#FFFFFF', active:'#FFFFFF', focus:'#FFFFFF', disabled:'#D1D5DB' }, border: { default:'#368e35', hover:'#1D4ED8', active:'#1E40AF', focus:'#368e35', disabled:'#F3F4F6' } },\n  secondary: { bg: { default:'#FFFFFF', hover:'#F9FAFB', active:'#F3F4F6', focus:'#FFFFFF', disabled:'#F9FAFB' }, text: { default:'#374151', hover:'#374151', active:'#374151', focus:'#374151', disabled:'#D1D5DB' }, border: { default:'#D1D5DB', hover:'#9CA3AF', active:'#D1D5DB', focus:'#D1D5DB', disabled:'#E5E7EB' } },\n  ghost:     { bg: { default:'transparent', hover:'#F3F4F6', active:'#E5E7EB', focus:'transparent', disabled:'transparent' }, text: { default:'#374151', hover:'#1f2937', active:'#374151', focus:'#374151', disabled:'#D1D5DB' }, border: { default:'transparent', hover:'transparent', active:'transparent', focus:'transparent', disabled:'transparent' } },\n  danger:    { bg: { default:'#DC2626', hover:'#B91C1C', active:'#991B1B', focus:'#DC2626', disabled:'#F3F4F6' }, text: { default:'#FFFFFF', hover:'#FFFFFF', active:'#FFFFFF', focus:'#FFFFFF', disabled:'#D1D5DB' }, border: { default:'#DC2626', hover:'#B91C1C', active:'#991B1B', focus:'#DC2626', disabled:'#F3F4F6' } },\n};\n\nfunction Button({ variant = 'primary', size = 'md', state = 'default', children = 'Button' }) {\n  const sf = SIZE_FALLBACKS[size];\n  const cf = COLOR_FALLBACKS[variant];\n  const isDisabled = state === 'disabled';\n  const isFocus = state === 'focus';\n\n  const style = {\n    display: 'inline-flex',\n    alignItems: 'center',\n    justifyContent: 'center',\n    gap: sizeVar(size, 'gap', sf.gap),\n    minHeight: sizeVar(size, 'min-height', sf.minHeight),\n    padding: `${sizeVar(size, 'padding-y', sf.paddingY)} ${sizeVar(size, 'padding-x', sf.paddingX)}`,\n    fontSize: sizeVar(size, 'font-size', sf.fontSize),\n    lineHeight: sizeVar(size, 'line-height', sf.lineHeight),\n    fontFamily: `var(--button-font-family, Inter, sans-serif)`,\n    fontWeight: `var(--button-font-weight, 600)`,\n    borderRadius: `var(--button-radius, 8px)`,\n    borderWidth: `var(--button-border-width, 1px)`,\n    borderStyle: 'solid',\n    backgroundColor: colorVar(variant, 'bg', state, cf.bg[state]),\n    color: colorVar(variant, 'text', state, cf.text[state]),\n    borderColor: colorVar(variant, 'border', state, cf.border[state]),\n    cursor: isDisabled ? 'not-allowed' : 'pointer',\n    outline: isFocus\n      ? `var(--button-focus-ring-width, 2px) solid var(--button-focus-ring-color, #368e35)`\n      : 'none',\n    outlineOffset: isFocus ? `var(--button-focus-ring-offset, 2px)` : undefined,\n    transition: `var(--button-transition, all 0.15s ease)`,\n    boxSizing: 'border-box',\n  };\n\n  return (\n    <button type=\"button\" disabled={isDisabled} style={style}>\n      {children}\n    </button>\n  );\n}\n\nfunction Demo() {\n  const labelMap = { default: 'Default', hover: 'Hover', active: 'Active', focus: 'Focus', disabled: 'Disabled' };\n  const cellStyle = { display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '6px' };\n  const headerStyle = { fontSize: '11px', fontFamily: 'Inter, sans-serif', color: '#6B7280', fontWeight: 600, marginBottom: '2px', textTransform: 'uppercase', letterSpacing: '0.05em' };\n  const variantLabelStyle = { fontSize: '11px', fontFamily: 'Inter, sans-serif', color: '#374151', fontWeight: 700, width: '80px', display: 'flex', alignItems: 'center', minHeight: '20px', textTransform: 'capitalize' };\n\n  return (\n    <div style={{ padding: '24px', background: '#F9FAFB', fontFamily: 'Inter, sans-serif' }}>\n      <div style={{ display: 'grid', gridTemplateColumns: '80px repeat(5, auto)', gap: '12px', alignItems: 'start' }}>\n        <div />\n        {STATES.map(s => (\n          <div key={s} style={headerStyle}>{labelMap[s]}</div>\n        ))}\n        {VARIANTS.map(variant => (\n          <>\n            <div key={`label-${variant}`} style={variantLabelStyle}>{variant}</div>\n            {STATES.map(state => (\n              <div key={`${variant}-${state}`} style={cellStyle}>\n                {SIZES.map(size => (\n                  <Button key={size} variant={variant} size={size} state={state}>\n                    {size.toUpperCase()}\n                  </Button>\n                ))}\n              </div>\n            ))}\n          </>\n        ))}\n      </div>\n    </div>\n  );\n}\n\nrender(<Demo />);\n```",
+      "_meta": {
+        "workflowVersion": "ssot-v3",
+        "generatedAt": "2026-04-02T17:05:28.279Z",
+        "sourceHash": "fnv1a-21c0a27e",
+        "componentTokenHash": "fnv1a-4b72ad3f",
+        "referencedTokenHash": "fnv1a-57349606",
+        "referencedTokenPaths": [
+          "semantic.color.action.primary.bg.default",
+          "semantic.color.action.primary.bg.hover",
+          "semantic.color.action.primary.bg.active",
+          "semantic.color.action.primary.bg.disabled",
+          "semantic.color.action.primary.text.default",
+          "semantic.color.action.primary.text.disabled",
+          "semantic.color.action.primary.border.default",
+          "semantic.color.action.primary.border.hover",
+          "semantic.color.action.primary.border.disabled",
+          "semantic.color.action.secondary.bg.default",
+          "semantic.color.action.secondary.bg.hover",
+          "semantic.color.action.secondary.bg.active",
+          "semantic.color.action.secondary.bg.disabled",
+          "semantic.color.action.secondary.text.default",
+          "semantic.color.action.secondary.text.disabled",
+          "semantic.color.action.secondary.border.default",
+          "semantic.color.action.secondary.border.hover",
+          "semantic.color.action.secondary.border.disabled",
+          "semantic.color.action.ghost.bg.default",
+          "semantic.color.action.ghost.bg.hover",
+          "semantic.color.action.ghost.bg.active",
+          "semantic.color.action.ghost.bg.disabled",
+          "semantic.color.action.ghost.text.default",
+          "semantic.color.action.ghost.text.disabled",
+          "semantic.color.action.ghost.border.default",
+          "semantic.color.action.ghost.border.hover",
+          "semantic.color.action.ghost.border.disabled",
+          "semantic.color.action.danger.bg.default",
+          "semantic.color.action.danger.bg.hover",
+          "semantic.color.action.danger.bg.active",
+          "semantic.color.action.danger.bg.disabled",
+          "semantic.color.action.danger.text.default",
+          "semantic.color.action.danger.text.disabled",
+          "semantic.color.action.danger.border.default",
+          "semantic.color.action.danger.border.hover",
+          "semantic.color.action.danger.border.disabled"
+        ],
+        "figmaMatchedKey": "Button",
+        "figmaCachedAt": "2026-03-25T18:22:29Z",
+        "variableCssSource": "main:build/css/variables.css",
+        "notes": [
+          "legacy_doc",
+          "missing_meta",
+          "workflow_version_changed"
+        ]
+      }
+    }
+  },
   "typography": {}
 }
