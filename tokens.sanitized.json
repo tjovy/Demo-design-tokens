@@ -319,7 +319,7 @@
         "description": "Core primary palette step 500. Raw hex color."
       },
       "600": {
-        "value": "#2563eb",
+        "value": "#db42b5",
         "type": "color",
         "$extensions": {
           "com.figma.scopes": [
@@ -5031,8 +5031,7 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      },
-      "description": "Component-level design token. Resolves from semantic or core layer."
+      }
     },
     "paddingY": {
       "value": "{spacing.xs}",
@@ -5043,8 +5042,7 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      },
-      "description": "Component-level design token. Resolves from semantic or core layer."
+      }
     },
     "fontSize": {
       "value": "{fontSize.xs}",
@@ -5054,8 +5052,7 @@
           "WIDTH_HEIGHT"
         ],
         "com.figma.hiddenFromPublishing": false
-      },
-      "description": "Component-level design token. Resolves from semantic or core layer."
+      }
     },
     "fontWeight": {
       "value": "{fontWeight.medium}",
@@ -5067,8 +5064,7 @@
           "GAP"
         ],
         "com.figma.hiddenFromPublishing": false
-      },
-      "description": "Component-level design token. Resolves from semantic or core layer."
+      }
     },
     "radius": {
       "value": "{radius.full}",
@@ -5078,8 +5074,7 @@
           "CORNER_RADIUS"
         ],
         "com.figma.hiddenFromPublishing": false
-      },
-      "description": "Component-level design token. Resolves from semantic or core layer."
+      }
     }
   },
   "heading": {
