@@ -153,14 +153,17 @@ async function buildTokens() {
 
       /**
        * ds/css/variables
-       * CSS custom properties avec commentaires de description docs.
+       * CSS custom properties, avec descriptions optionnelles.
        */
       'ds/css/variables': ({ dictionary, options }) => {
         const selector = options?.selector ?? ':root';
+        const includeDescriptions =
+          options?.includeDescriptions === true ||
+          options?.includeDescriptions === 'true';
         const lines    = [`${selector} {`];
 
         for (const token of dictionary.allTokens) {
-          if (token.description) {
+          if (includeDescriptions && token.description) {
             const descLine = token.description
               .split('\n')[0]
               .replace(/^##?\s*/, '')
@@ -190,7 +193,8 @@ async function buildTokens() {
           options: {
             selector: ':root',
             outputReferences: true,
-            showFileHeader: true,
+            showFileHeader: false,
+            includeDescriptions: false,
           },
         },
       ],
