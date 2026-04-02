@@ -972,7 +972,7 @@
           "description": "Core primary palette step 500. Raw hex color."
         },
         "600": {
-          "value": "#e343e6",
+          "value": "#a5d027",
           "type": "color",
           "$extensions": {
             "com.figma.scopes": [
