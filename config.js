@@ -16,6 +16,7 @@
 
 const fs              = require('fs');
 const path            = require('path');
+const { createBuildView } = require('./scripts/build-view');
 
 // ─── Constantes ──────────────────────────────────────────────────────────────
 
@@ -83,7 +84,8 @@ async function buildTokens() {
         parser: ({ contents }) => {
           const tokens = JSON.parse(contents);
           const docs   = loadDocs();
-          return injectDescriptions(tokens, docs);
+          const enriched = injectDescriptions(tokens, docs);
+          return createBuildView(enriched);
         },
       },
     },

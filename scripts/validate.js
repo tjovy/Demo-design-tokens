@@ -19,6 +19,7 @@
 
 const fs   = require('fs');
 const path = require('path');
+const { createBuildView } = require('./build-view');
 
 const SOURCE = path.resolve(__dirname, '../tokens.sanitized.json');
 
@@ -211,7 +212,8 @@ function validate() {
     process.exit(1);
   }
 
-  const tokens  = collectTokens(raw);
+  const buildView = createBuildView(raw);
+  const tokens  = collectTokens(buildView);
   const pathSet = buildPathSet(tokens);
 
   console.log(`   ${tokens.length} tokens collectés\n`);
