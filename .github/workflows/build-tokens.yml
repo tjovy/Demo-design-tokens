@@ -36,7 +36,7 @@ concurrency:
 # ─── Job ──────────────────────────────────────────────────────────────────────
 jobs:
   build:
-    name: Sanitize → Validate → Build clean CSS → Publish
+    name: Sanitize → Validate → Build clean CSS → Publish artifacts
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -82,9 +82,15 @@ jobs:
         # Génère uniquement :
         #   build/css/variables.css
 
-      # ── 8. Vérification que le CSS est non-vide ───────────────────────────────
-      - name: 🩺 Sanity check — CSS non vide
+      # ── 8. Vérification des sorties générées ──────────────────────────────────
+      - name: 🩺 Sanity check — sanitized JSON + CSS
         run: |
+          if [ ! -s tokens.sanitized.json ]; then
+            echo "❌ tokens.sanitized.json est vide ou absent"
+            exit 1
+          fi
+          echo "✅ tokens.sanitized.json généré — $(wc -l < tokens.sanitized.json) lignes"
+
           if [ ! -s build/css/variables.css ]; then
             echo "❌ build/css/variables.css est vide ou absent"
             exit 1
@@ -112,6 +118,7 @@ jobs:
         with:
           name: design-tokens-${{ github.sha }}
           path: |
+            tokens.sanitized.json
             build/css/variables.css
           retention-days: 30
 
@@ -121,7 +128,7 @@ jobs:
           git config --global user.name  "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add build/css/variables.css
+          git add tokens.sanitized.json build/css/variables.css
 
           # Commit uniquement s'il y a des changements
           if git diff --staged --quiet; then
@@ -146,7 +153,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Fichier | Statut |" >> $GITHUB_STEP_SUMMARY
           echo "|---------|--------|" >> $GITHUB_STEP_SUMMARY
-          for f in "build/css/variables.css"; do
+          for f in "tokens.sanitized.json" "build/css/variables.css"; do
             if [ -f "$f" ]; then
               LINES=$(wc -l < "$f")
               echo "| \`$f\` | ✅ $LINES lignes |" >> $GITHUB_STEP_SUMMARY
