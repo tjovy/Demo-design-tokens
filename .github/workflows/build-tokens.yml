@@ -10,6 +10,7 @@ on:
       - 'tokens-docs.json'    # Documentation IA (n8n)
       - 'package.json'
       - 'config.js'
+      - '.github/workflows/build-tokens.yml'
       - 'scripts/sanitize.js'
       - 'scripts/validate.js'
       - 'scripts/prepare-source.js'
@@ -35,7 +36,7 @@ concurrency:
 # ─── Job ──────────────────────────────────────────────────────────────────────
 jobs:
   build:
-    name: Sanitize → Validate → Build CSS → Publish
+    name: Sanitize → Validate → Build clean CSS → Publish
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -76,7 +77,7 @@ jobs:
         # Les warnings sont loggés mais ne bloquent pas
 
       # ── 7. Build Style Dictionary ─────────────────────────────────────────────
-      - name: 🏭 Build CSS variables
+      - name: 🏭 Build clean CSS variables
         run: npm run build:css
         # Génère uniquement :
         #   build/css/variables.css
@@ -89,6 +90,10 @@ jobs:
             exit 1
           fi
           echo "✅ variables.css généré — $(wc -l < build/css/variables.css) lignes"
+          if grep -q '/\*' build/css/variables.css; then
+            echo "❌ Des commentaires sont encore présents dans variables.css"
+            exit 1
+          fi
           # Vérification rapide : pas de valeurs hex là où on attend des px
           if grep -E 'spacing.*: #[0-9a-fA-F]{6}' build/css/variables.css; then
             echo "❌ Valeurs hex détectées dans des tokens de spacing — problème de type"
