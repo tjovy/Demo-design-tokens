@@ -22,6 +22,7 @@ const path            = require('path');
 const TOKENS_SOURCE = path.resolve(__dirname, 'tokens.sanitized.json');
 const DOCS_SOURCE   = path.resolve(__dirname, 'tokens-docs.json');
 const BUILD_PATH    = path.resolve(__dirname, 'build');
+const TARGET_PLATFORMS = process.argv.slice(2);
 
 // ─── Helpers docs ────────────────────────────────────────────────────────────
 
@@ -248,8 +249,15 @@ async function buildTokens() {
   });
 
   try {
-    await sd.buildAllPlatforms();
-    console.log('\n✅ Style Dictionary build terminé → build/\n');
+    if (TARGET_PLATFORMS.length > 0) {
+      for (const platform of TARGET_PLATFORMS) {
+        await sd.buildPlatform(platform);
+      }
+      console.log(`\n✅ Style Dictionary build terminé → ${TARGET_PLATFORMS.join(', ')}\n`);
+    } else {
+      await sd.buildAllPlatforms();
+      console.log('\n✅ Style Dictionary build terminé → build/\n');
+    }
   } catch (e) {
     console.error('\n❌ Style Dictionary build échoué :', e.message);
     if (e.stack) console.error(e.stack);

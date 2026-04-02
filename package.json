@@ -6,6 +6,7 @@
   "scripts": {
     "sanitize":        "node scripts/sanitize.js",
     "build:tokens":    "node config.js",
+    "build:css":       "node config.js css",
     "build":           "npm run sanitize && npm run build:tokens",
     "clean":           "rm -rf build/",
     "rebuild":         "npm run clean && npm run build",
