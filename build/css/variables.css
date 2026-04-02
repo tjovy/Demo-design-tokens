@@ -64,7 +64,7 @@
   --color-primary-500: #3b82f6;
 
   /* Core primary palette step 600. Raw hex color. */
-  --color-primary-600: #2563eb;
+  --color-primary-600: #d80027;
 
   /* Core primary palette step 700. Raw hex color. */
   --color-primary-700: #1d4ed8;
@@ -379,7 +379,7 @@
   --color-text-disabled: #d1d5db;
 
   /* Liens */
-  --color-text-link: #2563eb;
+  --color-text-link: #d80027;
 
   /* Liens au survol */
   --color-text-link-hover: #1d4ed8;
@@ -397,7 +397,7 @@
   --color-border-disabled: #f3f4f6;
 
   /* Bouton primary - fond */
-  --color-action-primary-bg-default: #2563eb;
+  --color-action-primary-bg-default: #d80027;
 
   /* Bouton primary - fond hover */
   --color-action-primary-bg-hover: #1d4ed8;
@@ -415,7 +415,7 @@
   --color-action-primary-text-disabled: #d1d5db;
 
   /* Bouton primary - bordure */
-  --color-action-primary-border-default: #2563eb;
+  --color-action-primary-border-default: #d80027;
 
   /* Bouton primary - bordure hover */
   --color-action-primary-border-hover: #1d4ed8;
@@ -1027,7 +1027,7 @@
   --button-sm-line-height: 1.5;
 
   /* Theme-level component token. Resolves through semantic to core palette. */
-  --button-primary-background: #2563eb;
+  --button-primary-background: #d80027;
 
   /* Theme-level component token. Resolves through semantic to core palette. */
   --button-primary-text: #ffffff;
