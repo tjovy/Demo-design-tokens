@@ -30,9 +30,12 @@ const OUTPUT = path.resolve(__dirname, '../tokens.sanitized.json');
 const BLACKLIST_PATHS = [
   'semantic.Nombre',
   'semantic/semantic.Nombre',
+  'semantic/Light.Nombre',
+  'semantic/Dark.Nombre',
   'semantic.color.action.ghost.padding.paddingX',
   'semantic.color.action.ghost.padding.paddingY',
 ];
+const BLACKLISTED_TOKEN_NAMES = new Set(['Nombre']);
 
 /**
  * Map de déduplication de sets.
@@ -170,6 +173,20 @@ function removeBlacklisted(tokens) {
         console.log(`  🗑  Supprimé token blacklisté : ${dotPath}`);
       }
     }
+  }
+}
+
+function removeBlacklistedNamesRecursive(obj) {
+  if (!obj || typeof obj !== 'object') return;
+
+  for (const key of Object.keys(obj)) {
+    if (BLACKLISTED_TOKEN_NAMES.has(key)) {
+      delete obj[key];
+      console.log(`  🗑  Supprimé token blacklisté par nom : ${key}`);
+      continue;
+    }
+
+    removeBlacklistedNamesRecursive(obj[key]);
   }
 }
 
@@ -361,6 +378,7 @@ function sanitize() {
 
   // 3. Suppression des tokens blacklistés
   removeBlacklisted(tokens);
+  removeBlacklistedNamesRecursive(tokens);
 
   // 4. Déplacement des tokens spacing mal placés dans semantic
   if (tokens.semantic) {

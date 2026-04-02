@@ -40,6 +40,7 @@ function flattenSetsForBuild(tokens) {
   const MERGE_ORDER = ['core', 'semantic', 'component', 'typography', 'theme'];
   const result = {};
   const modes = {};
+  const metadataModes = tokens.$metadata?._modes || {};
 
   for (const [setName, setContent] of Object.entries(tokens)) {
     if (setName === 'light' || setName === 'light/light') {
@@ -47,6 +48,14 @@ function flattenSetsForBuild(tokens) {
     } else if (setName === 'dark' || setName === 'dark/dark') {
       deepMerge(modes, { dark: setContent });
     }
+  }
+
+  if (metadataModes.Light || metadataModes.light) {
+    deepMerge(modes, { light: metadataModes.Light || metadataModes.light });
+  }
+
+  if (metadataModes.Dark || metadataModes.dark) {
+    deepMerge(modes, { dark: metadataModes.Dark || metadataModes.dark });
   }
 
   const unlisted = Object.keys(tokens).filter(
