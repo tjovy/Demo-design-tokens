@@ -227,32 +227,6 @@ function removeLegacyThemeTokens(themeSet) {
 }
 
 /**
- * Supprime les alias plats qui entrent en collision après transformation des noms.
- */
-function removeCollidingFontAliases(tokens) {
-  if (tokens.font?.size) {
-    delete tokens.font.size;
-    console.log('  🗑  Supprimé alias collisionnel : font.size');
-  }
-
-  if (tokens.font?.weight) {
-    delete tokens.font.weight;
-    console.log('  🗑  Supprimé alias collisionnel : font.weight');
-  }
-}
-
-/**
- * Corrige certains noms de palettes hérités avec une casse incohérente.
- */
-function normalizeTopLevelPaletteNames(tokens) {
-  if (tokens.Blue && !tokens.blue) {
-    tokens.blue = tokens.Blue;
-    delete tokens.Blue;
-    console.log('  🔤 Palette renommée : Blue → blue');
-  }
-}
-
-/**
  * Normalise les clés de sets selon SET_ALIASES.
  * Merge les sets "X/X" dans leur équivalent canonique "X".
  * Ignore les sets Light/Dark qui sont des modes (pas des sets à fusionner).
@@ -362,65 +336,6 @@ function rebuildTokenSetOrder(tokens) {
   console.log(`  📋 tokenSetOrder normalisé : [${order.join(', ')}]`);
 }
 
-/**
- * Aplatit les sets en supprimant le préfixe de set (core, semantic, component…).
- *
- * Pourquoi : Token Studio génère des alias de la forme {color.white} (sans préfixe de set).
- * Si le JSON garde la structure { core: { color: { white: {...} } } }, Style Dictionary
- * cherche "color.white" à la racine et échoue. L'aplatissement réalise ce que
- * `token-transformer` faisait : merge de tous les sets dans un objet racine unique.
- *
- * Ordre de merge : core < semantic < component < typography < theme
- * (les sets plus "hauts" dans la chaîne sémantique ont priorité).
- * Les sets de modes (light, dark, light/light, dark/dark) et $themes/$metadata
- * sont exclus du merge principal.
- */
-function flattenSets(tokens) {
-  /** Sets à exclure du merge racine (modes et metadata) */
-  const EXCLUDE = new Set(['$metadata', '$themes', 'light', 'light/light', 'dark', 'dark/dark']);
-
-  /**
-   * Ordre de priorité pour le merge (dernier = gagne en cas de collision).
-   * Les sets listés ici sont mergés dans cet ordre.
-   * Les sets non listés sont mergés en premier (ordre naturel).
-   */
-  const MERGE_ORDER = ['core', 'semantic', 'component', 'typography', 'theme'];
-
-  const result = {};
-  const modes  = {};
-
-  // Collecter les sets de modes séparément
-  for (const [setName, setContent] of Object.entries(tokens)) {
-    if (setName === 'light' || setName === 'light/light') {
-      deepMerge(modes, { light: setContent });
-    } else if (setName === 'dark' || setName === 'dark/dark') {
-      deepMerge(modes, { dark: setContent });
-    }
-  }
-
-  // Merge dans l'ordre : d'abord les sets non listés dans MERGE_ORDER, puis dans l'ordre
-  const unlisted = Object.keys(tokens).filter(
-    k => !EXCLUDE.has(k) && !MERGE_ORDER.includes(k)
-  );
-
-  for (const setName of [...unlisted, ...MERGE_ORDER]) {
-    if (EXCLUDE.has(setName) || !tokens[setName]) continue;
-    const setContent = tokens[setName];
-    if (typeof setContent !== 'object') continue;
-
-    // Expose le thème par défaut à la racine pour les aliases {bg.*}, {accent.*}, etc.
-    if (setName === 'theme' && modes.light) {
-      deepMerge(result, modes.light);
-      console.log('  ↳ Injecte le mode par défaut "light" → racine');
-    }
-
-    deepMerge(result, setContent);
-    console.log(`  ↳ Aplati set "${setName}" → racine`);
-  }
-
-  return result;
-}
-
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 function sanitize() {
@@ -476,16 +391,14 @@ function sanitize() {
   // 8b. Réécriture des références legacy avant l'aplatissement final
   rewriteLegacyReferences(tokens);
 
-  // 9. Aplatissement des sets → supprimer les préfixes core/semantic/…
-  //    Nécessaire pour que les alias {color.white} résolvent correctement dans Style Dictionary.
-  console.log('\n🔀 Aplatissement des sets (suppression des préfixes de set) :');
-  const flat = flattenSets(tokens);
-  removeCollidingFontAliases(flat);
-  normalizeTopLevelPaletteNames(flat);
-  console.log(`✅ Aplatissement terminé → ${Object.keys(flat).filter(k => !k.startsWith('$')).length} groupes racines`);
+  // 9. Conservation de la structure canonique des sets.
+  //    Le flatten pour Style Dictionary est désormais fait au moment du build,
+  //    afin de garder component.* exploitable par n8n et la documentation.
+  console.log('\n🧱 Conservation des sets canoniques pour les consommateurs externes :');
+  console.log(`✅ Structure canonique prête → ${Object.keys(tokens).filter(k => !k.startsWith('$')).length} groupes racines`);
 
   // 10. Écriture
-  fs.writeFileSync(OUTPUT, JSON.stringify(flat, null, 2), 'utf-8');
+  fs.writeFileSync(OUTPUT, JSON.stringify(tokens, null, 2), 'utf-8');
   console.log(`\n✅ tokens.sanitized.json écrit → ${OUTPUT}`);
   console.log('   Prêt pour Style Dictionary.\n');
 }
